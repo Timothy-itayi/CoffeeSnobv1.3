@@ -26,7 +26,7 @@ class SearchBarView: UIView {
         super.init(coder: coder)
         setupSearchBar()
     }
-
+ // update the Search Bar to be filters or something 
     private func setupSearchBar() {
         addSubview(searchBar)
         searchBar.delegate = self
