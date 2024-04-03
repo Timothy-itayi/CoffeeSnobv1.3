@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9814ED112BBBA51E0030524B /* CafeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9814ED102BBBA51E0030524B /* CafeProjectApp.swift */; };
+		9814ED132BBBA51E0030524B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9814ED122BBBA51E0030524B /* ContentView.swift */; };
+		9814ED172BBBA51F0030524B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9814ED162BBBA51F0030524B /* Assets.xcassets */; };
+		9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9814ED192BBBA51F0030524B /* Preview Assets.xcassets */; };
+		98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE72BBD1AF600872DA4 /* coffeemarker.png */; };
+		98723EEA2BBD245600872DA4 /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE92BBD245600872DA4 /* cafe.png */; };
+		98723EEC2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */; };
+		98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */; };
+		98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */; };
+		98D393082BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */; };
+		98D3930A2BBBCCDA0086F69E /* TomTomSDKBindingTrafficTileGeneratorInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393092BBBCCDA0086F69E /* TomTomSDKBindingTrafficTileGeneratorInternal */; };
+		98D3930C2BBBCCDA0086F69E /* TomTomSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3930B2BBBCCDA0086F69E /* TomTomSDKCommon */; };
+		98D3930F2BBBD0D50086F69E /* TomTomSDKBindingFrameworkSecurityInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3930E2BBBD0D50086F69E /* TomTomSDKBindingFrameworkSecurityInternal */; };
+		98D393112BBBD0D50086F69E /* TomTomSDKBindingMapMatchingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393102BBBD0D50086F69E /* TomTomSDKBindingMapMatchingInternal */; };
+		98D393132BBBD0D50086F69E /* TomTomSDKBindingNDSLiveTileStoreAccessInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393122BBBD0D50086F69E /* TomTomSDKBindingNDSLiveTileStoreAccessInternal */; };
+		98D393152BBBD0D50086F69E /* TomTomSDKBindingNavigationTextGenerationInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393142BBBD0D50086F69E /* TomTomSDKBindingNavigationTextGenerationInternal */; };
+		98D393172BBBD0D50086F69E /* TomTomSDKBindingNavigationTileStoreAccessInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393162BBBD0D50086F69E /* TomTomSDKBindingNavigationTileStoreAccessInternal */; };
+		98D3931C2BBBD21E0086F69E /* TomTomSDKRangeCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3931B2BBBD21E0086F69E /* TomTomSDKRangeCalculator */; };
+		98D3931E2BBBD2260086F69E /* TomTomSDKReverseGeocoder in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3931D2BBBD2260086F69E /* TomTomSDKReverseGeocoder */; };
+		98D393202BBBD22B0086F69E /* TomTomSDKReverseGeocoderOnline in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3931F2BBBD22B0086F69E /* TomTomSDKReverseGeocoderOnline */; };
+		98D393222BBBD2350086F69E /* TomTomSDKMapDisplay in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393212BBBD2350086F69E /* TomTomSDKMapDisplay */; };
+		98D393242BBBD2540086F69E /* TomTomSDKRouteReplanner in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393232BBBD2540086F69E /* TomTomSDKRouteReplanner */; };
+		98D393262BBBD25E0086F69E /* TomTomSDKSearchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393252BBBD25E0086F69E /* TomTomSDKSearchUI */; };
+		98D3932C2BBBD8DA0086F69E /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3932B2BBBD8DA0086F69E /* RouteView.swift */; };
+		98D3932E2BBBDB290086F69E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3932D2BBBDB290086F69E /* AppDelegate.swift */; };
+		98D393302BBBDD330086F69E /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3932F2BBBDD330086F69E /* RouteViewController.swift */; };
+		98D393382BBCA3030086F69E /* CafeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393372BBCA3030086F69E /* CafeCardView.swift */; };
+		98D3933A2BBCA31A0086F69E /* CafeCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393392BBCA31A0086F69E /* CafeCardController.swift */; };
+		98D3933C2BBCA3790086F69E /* TomTomSDKSearchOnline in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3933B2BBCA3790086F69E /* TomTomSDKSearchOnline */; };
+		98D3933E2BBCA3800086F69E /* TomTomSDKSearch in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3933D2BBCA3800086F69E /* TomTomSDKSearch */; };
+		98D393402BBCA5640086F69E /* TomTomSDKSafetyLocationsDataAdapterOnline in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3933F2BBCA5640086F69E /* TomTomSDKSafetyLocationsDataAdapterOnline */; };
+		98D393442BBCC2720086F69E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393432BBCC2720086F69E /* SearchBarView.swift */; };
+		98D393462BBCC2F00086F69E /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393452BBCC2F00086F69E /* SearchBarViewController.swift */; };
+		98D393482BBCC5E10086F69E /* TomTomSDKRoutingCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393472BBCC5E10086F69E /* TomTomSDKRoutingCommon */; };
+		98D3934A2BBCC5E80086F69E /* TomTomSDKRoutingVisualization in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393492BBCC5E80086F69E /* TomTomSDKRoutingVisualization */; };
+		98D3934C2BBCC6B30086F69E /* TomTomSDKTraffic in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3934B2BBCC6B30086F69E /* TomTomSDKTraffic */; };
+		98D3934E2BBCC8430086F69E /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3934D2BBCC8430086F69E /* HeaderViewController.swift */; };
+		98D393522BBCCCBB0086F69E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393512BBCCCBB0086F69E /* HeaderView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		98723EE42BBCE30900872DA4 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = file.bplist;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		9814ED202BBBA51F0030524B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9814ED052BBBA51D0030524B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9814ED0C2BBBA51E0030524B;
+			remoteInfo = "Cafe-Project";
+		};
+		9814ED2A2BBBA51F0030524B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9814ED052BBBA51D0030524B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9814ED0C2BBBA51E0030524B;
+			remoteInfo = "Cafe-Project";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9814ED0D2BBBA51E0030524B /* CoffeeSnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeSnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9814ED102BBBA51E0030524B /* CafeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeProjectApp.swift; sourceTree = "<group>"; };
+		9814ED122BBBA51E0030524B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9814ED162BBBA51F0030524B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9814ED192BBBA51F0030524B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9814ED1F2BBBA51F0030524B /* CoffeeSnobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeSnobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9814ED292BBBA51F0030524B /* CoffeeSnobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeSnobUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98723EE62BBCE52800872DA4 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		98723EE72BBD1AF600872DA4 /* coffeemarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coffeemarker.png; path = ../../../Downloads/coffeemarker.png; sourceTree = "<group>"; };
+		98723EE92BBD245600872DA4 /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe.png; path = ../../../Downloads/cafe.png; sourceTree = "<group>"; };
+		98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerBalloonView.swift; sourceTree = "<group>"; };
+		98D3932A2BBBD5740086F69E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		98D3932B2BBBD8DA0086F69E /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
+		98D3932D2BBBDB290086F69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		98D3932F2BBBDD330086F69E /* RouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
+		98D393372BBCA3030086F69E /* CafeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCardView.swift; sourceTree = "<group>"; };
+		98D393392BBCA31A0086F69E /* CafeCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCardController.swift; sourceTree = "<group>"; };
+		98D393432BBCC2720086F69E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		98D393452BBCC2F00086F69E /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
+		98D3934D2BBCC8430086F69E /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		98D393512BBCCCBB0086F69E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9814ED0A2BBBA51E0030524B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98D393202BBBD22B0086F69E /* TomTomSDKReverseGeocoderOnline in Frameworks */,
+				98D393112BBBD0D50086F69E /* TomTomSDKBindingMapMatchingInternal in Frameworks */,
+				98D3930C2BBBCCDA0086F69E /* TomTomSDKCommon in Frameworks */,
+				98D393242BBBD2540086F69E /* TomTomSDKRouteReplanner in Frameworks */,
+				98D393172BBBD0D50086F69E /* TomTomSDKBindingNavigationTileStoreAccessInternal in Frameworks */,
+				98D393482BBCC5E10086F69E /* TomTomSDKRoutingCommon in Frameworks */,
+				98D393402BBCA5640086F69E /* TomTomSDKSafetyLocationsDataAdapterOnline in Frameworks */,
+				98D393152BBBD0D50086F69E /* TomTomSDKBindingNavigationTextGenerationInternal in Frameworks */,
+				98D393132BBBD0D50086F69E /* TomTomSDKBindingNDSLiveTileStoreAccessInternal in Frameworks */,
+				98D393262BBBD25E0086F69E /* TomTomSDKSearchUI in Frameworks */,
+				98D3933C2BBCA3790086F69E /* TomTomSDKSearchOnline in Frameworks */,
+				98D3930F2BBBD0D50086F69E /* TomTomSDKBindingFrameworkSecurityInternal in Frameworks */,
+				98D393222BBBD2350086F69E /* TomTomSDKMapDisplay in Frameworks */,
+				98D393082BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal in Frameworks */,
+				98D3931C2BBBD21E0086F69E /* TomTomSDKRangeCalculator in Frameworks */,
+				98D3934C2BBCC6B30086F69E /* TomTomSDKTraffic in Frameworks */,
+				98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */,
+				98D3930A2BBBCCDA0086F69E /* TomTomSDKBindingTrafficTileGeneratorInternal in Frameworks */,
+				98D3934A2BBCC5E80086F69E /* TomTomSDKRoutingVisualization in Frameworks */,
+				98D3933E2BBCA3800086F69E /* TomTomSDKSearch in Frameworks */,
+				98D3931E2BBBD2260086F69E /* TomTomSDKReverseGeocoder in Frameworks */,
+				98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9814ED1C2BBBA51F0030524B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9814ED262BBBA51F0030524B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9814ED042BBBA51D0030524B = {
+			isa = PBXGroup;
+			children = (
+				98723EE62BBCE52800872DA4 /* info.plist */,
+				98D3932A2BBBD5740086F69E /* Package.swift */,
+				9814ED0F2BBBA51E0030524B /* CoffeeSnob */,
+				9814ED222BBBA51F0030524B /* Cafe-ProjectTests */,
+				9814ED2C2BBBA51F0030524B /* Cafe-ProjectUITests */,
+				9814ED0E2BBBA51E0030524B /* Products */,
+				98D3931A2BBBD21E0086F69E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9814ED0E2BBBA51E0030524B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9814ED0D2BBBA51E0030524B /* CoffeeSnob.app */,
+				9814ED1F2BBBA51F0030524B /* CoffeeSnobTests.xctest */,
+				9814ED292BBBA51F0030524B /* CoffeeSnobUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9814ED0F2BBBA51E0030524B /* CoffeeSnob */ = {
+			isa = PBXGroup;
+			children = (
+				98D393342BBCA2C70086F69E /* Model */,
+				98D393322BBCA2A70086F69E /* Controller  */,
+				98D393312BBBDD830086F69E /* View */,
+				9814ED102BBBA51E0030524B /* CafeProjectApp.swift */,
+				98D3932D2BBBDB290086F69E /* AppDelegate.swift */,
+				9814ED122BBBA51E0030524B /* ContentView.swift */,
+				9814ED162BBBA51F0030524B /* Assets.xcassets */,
+				98723EE92BBD245600872DA4 /* cafe.png */,
+				98723EE72BBD1AF600872DA4 /* coffeemarker.png */,
+				9814ED182BBBA51F0030524B /* Preview Content */,
+			);
+			path = CoffeeSnob;
+			sourceTree = "<group>";
+		};
+		9814ED182BBBA51F0030524B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9814ED192BBBA51F0030524B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9814ED222BBBA51F0030524B /* Cafe-ProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cafe-ProjectTests";
+			sourceTree = "<group>";
+		};
+		9814ED2C2BBBA51F0030524B /* Cafe-ProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cafe-ProjectUITests";
+			sourceTree = "<group>";
+		};
+		98D3931A2BBBD21E0086F69E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98D393312BBBDD830086F69E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
+				98D393372BBCA3030086F69E /* CafeCardView.swift */,
+				98D393432BBCC2720086F69E /* SearchBarView.swift */,
+				98D393512BBCCCBB0086F69E /* HeaderView.swift */,
+				98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98D393322BBCA2A70086F69E /* Controller  */ = {
+			isa = PBXGroup;
+			children = (
+				98D3932F2BBBDD330086F69E /* RouteViewController.swift */,
+				98D393392BBCA31A0086F69E /* CafeCardController.swift */,
+				98D393452BBCC2F00086F69E /* SearchBarViewController.swift */,
+				98D3934D2BBCC8430086F69E /* HeaderViewController.swift */,
+			);
+			path = "Controller ";
+			sourceTree = "<group>";
+		};
+		98D393342BBCA2C70086F69E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9814ED0C2BBBA51E0030524B /* CoffeeSnob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9814ED332BBBA51F0030524B /* Build configuration list for PBXNativeTarget "CoffeeSnob" */;
+			buildPhases = (
+				9814ED092BBBA51E0030524B /* Sources */,
+				9814ED0A2BBBA51E0030524B /* Frameworks */,
+				9814ED0B2BBBA51E0030524B /* Resources */,
+			);
+			buildRules = (
+				98723EE42BBCE30900872DA4 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = CoffeeSnob;
+			packageProductDependencies = (
+				98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */,
+				98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */,
+				98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */,
+				98D393092BBBCCDA0086F69E /* TomTomSDKBindingTrafficTileGeneratorInternal */,
+				98D3930B2BBBCCDA0086F69E /* TomTomSDKCommon */,
+				98D3930E2BBBD0D50086F69E /* TomTomSDKBindingFrameworkSecurityInternal */,
+				98D393102BBBD0D50086F69E /* TomTomSDKBindingMapMatchingInternal */,
+				98D393122BBBD0D50086F69E /* TomTomSDKBindingNDSLiveTileStoreAccessInternal */,
+				98D393142BBBD0D50086F69E /* TomTomSDKBindingNavigationTextGenerationInternal */,
+				98D393162BBBD0D50086F69E /* TomTomSDKBindingNavigationTileStoreAccessInternal */,
+				98D3931B2BBBD21E0086F69E /* TomTomSDKRangeCalculator */,
+				98D3931D2BBBD2260086F69E /* TomTomSDKReverseGeocoder */,
+				98D3931F2BBBD22B0086F69E /* TomTomSDKReverseGeocoderOnline */,
+				98D393212BBBD2350086F69E /* TomTomSDKMapDisplay */,
+				98D393232BBBD2540086F69E /* TomTomSDKRouteReplanner */,
+				98D393252BBBD25E0086F69E /* TomTomSDKSearchUI */,
+				98D3933B2BBCA3790086F69E /* TomTomSDKSearchOnline */,
+				98D3933D2BBCA3800086F69E /* TomTomSDKSearch */,
+				98D3933F2BBCA5640086F69E /* TomTomSDKSafetyLocationsDataAdapterOnline */,
+				98D393472BBCC5E10086F69E /* TomTomSDKRoutingCommon */,
+				98D393492BBCC5E80086F69E /* TomTomSDKRoutingVisualization */,
+				98D3934B2BBCC6B30086F69E /* TomTomSDKTraffic */,
+			);
+			productName = "Cafe-Project";
+			productReference = 9814ED0D2BBBA51E0030524B /* CoffeeSnob.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9814ED1E2BBBA51F0030524B /* CoffeeSnobTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9814ED362BBBA51F0030524B /* Build configuration list for PBXNativeTarget "CoffeeSnobTests" */;
+			buildPhases = (
+				9814ED1B2BBBA51F0030524B /* Sources */,
+				9814ED1C2BBBA51F0030524B /* Frameworks */,
+				9814ED1D2BBBA51F0030524B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9814ED212BBBA51F0030524B /* PBXTargetDependency */,
+			);
+			name = CoffeeSnobTests;
+			productName = "Cafe-ProjectTests";
+			productReference = 9814ED1F2BBBA51F0030524B /* CoffeeSnobTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9814ED282BBBA51F0030524B /* CoffeeSnobUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9814ED392BBBA51F0030524B /* Build configuration list for PBXNativeTarget "CoffeeSnobUITests" */;
+			buildPhases = (
+				9814ED252BBBA51F0030524B /* Sources */,
+				9814ED262BBBA51F0030524B /* Frameworks */,
+				9814ED272BBBA51F0030524B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9814ED2B2BBBA51F0030524B /* PBXTargetDependency */,
+			);
+			name = CoffeeSnobUITests;
+			productName = "Cafe-ProjectUITests";
+			productReference = 9814ED292BBBA51F0030524B /* CoffeeSnobUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9814ED052BBBA51D0030524B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					9814ED0C2BBBA51E0030524B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					9814ED1E2BBBA51F0030524B = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 9814ED0C2BBBA51E0030524B;
+					};
+					9814ED282BBBA51F0030524B = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 9814ED0C2BBBA51E0030524B;
+					};
+				};
+			};
+			buildConfigurationList = 9814ED082BBBA51D0030524B /* Build configuration list for PBXProject "CoffeeSnob" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9814ED042BBBA51D0030524B;
+			packageReferences = (
+				98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */,
+				98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */,
+			);
+			productRefGroup = 9814ED0E2BBBA51E0030524B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9814ED0C2BBBA51E0030524B /* CoffeeSnob */,
+				9814ED1E2BBBA51F0030524B /* CoffeeSnobTests */,
+				9814ED282BBBA51F0030524B /* CoffeeSnobUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9814ED0B2BBBA51E0030524B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */,
+				9814ED172BBBA51F0030524B /* Assets.xcassets in Resources */,
+				98723EEA2BBD245600872DA4 /* cafe.png in Resources */,
+				98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9814ED1D2BBBA51F0030524B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9814ED272BBBA51F0030524B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9814ED092BBBA51E0030524B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98D393382BBCA3030086F69E /* CafeCardView.swift in Sources */,
+				98D3932E2BBBDB290086F69E /* AppDelegate.swift in Sources */,
+				9814ED132BBBA51E0030524B /* ContentView.swift in Sources */,
+				98D3933A2BBCA31A0086F69E /* CafeCardController.swift in Sources */,
+				98D393442BBCC2720086F69E /* SearchBarView.swift in Sources */,
+				98D393462BBCC2F00086F69E /* SearchBarViewController.swift in Sources */,
+				98D3932C2BBBD8DA0086F69E /* RouteView.swift in Sources */,
+				98723EEC2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift in Sources */,
+				98D393522BBCCCBB0086F69E /* HeaderView.swift in Sources */,
+				98D3934E2BBCC8430086F69E /* HeaderViewController.swift in Sources */,
+				98D393302BBBDD330086F69E /* RouteViewController.swift in Sources */,
+				9814ED112BBBA51E0030524B /* CafeProjectApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9814ED1B2BBBA51F0030524B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9814ED252BBBA51F0030524B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9814ED212BBBA51F0030524B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9814ED0C2BBBA51E0030524B /* CoffeeSnob */;
+			targetProxy = 9814ED202BBBA51F0030524B /* PBXContainerItemProxy */;
+		};
+		9814ED2B2BBBA51F0030524B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9814ED0C2BBBA51E0030524B /* CoffeeSnob */;
+			targetProxy = 9814ED2A2BBBA51F0030524B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9814ED312BBBA51F0030524B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = true;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9814ED322BBBA51F0030524B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = true;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9814ED342BBBA51F0030524B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = WRJXN2DGS3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cafe.cool.Cafe-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9814ED352BBBA51F0030524B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = WRJXN2DGS3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cafe.cool.Cafe-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9814ED372BBBA51F0030524B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WRJXN2DGS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cafe.cool.Cafe-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeSnob.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoffeeSnob";
+			};
+			name = Debug;
+		};
+		9814ED382BBBA51F0030524B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WRJXN2DGS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cafe.cool.Cafe-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeSnob.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoffeeSnob";
+			};
+			name = Release;
+		};
+		9814ED3A2BBBA51F0030524B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WRJXN2DGS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cafe.cool.Cafe-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Cafe-Project";
+			};
+			name = Debug;
+		};
+		9814ED3B2BBBA51F0030524B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WRJXN2DGS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cafe.cool.Cafe-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Cafe-Project";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9814ED082BBBA51D0030524B /* Build configuration list for PBXProject "CoffeeSnob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9814ED312BBBA51F0030524B /* Debug */,
+				9814ED322BBBA51F0030524B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9814ED332BBBA51F0030524B /* Build configuration list for PBXNativeTarget "CoffeeSnob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9814ED342BBBA51F0030524B /* Debug */,
+				9814ED352BBBA51F0030524B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9814ED362BBBA51F0030524B /* Build configuration list for PBXNativeTarget "CoffeeSnobTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9814ED372BBBA51F0030524B /* Debug */,
+				9814ED382BBBA51F0030524B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9814ED392BBBA51F0030524B /* Build configuration list for PBXNativeTarget "CoffeeSnobUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9814ED3A2BBBA51F0030524B /* Debug */,
+				9814ED3B2BBBA51F0030524B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tomtom-international/tomtom-sdk-spm-core";
+			requirement = {
+				kind = exactVersion;
+				version = 0.44.1;
+			};
+		};
+		98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tomtom-international/tomtom-sdk-spm-navigation";
+			requirement = {
+				kind = exactVersion;
+				version = 0.44.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKBindingFrameworkHTTPInternal;
+		};
+		98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKBindingFrameworkLoggingInternal;
+		};
+		98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKBindingMapDisplayEngineInternal;
+		};
+		98D393092BBBCCDA0086F69E /* TomTomSDKBindingTrafficTileGeneratorInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKBindingTrafficTileGeneratorInternal;
+		};
+		98D3930B2BBBCCDA0086F69E /* TomTomSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKCommon;
+		};
+		98D3930E2BBBD0D50086F69E /* TomTomSDKBindingFrameworkSecurityInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKBindingFrameworkSecurityInternal;
+		};
+		98D393102BBBD0D50086F69E /* TomTomSDKBindingMapMatchingInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKBindingMapMatchingInternal;
+		};
+		98D393122BBBD0D50086F69E /* TomTomSDKBindingNDSLiveTileStoreAccessInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKBindingNDSLiveTileStoreAccessInternal;
+		};
+		98D393142BBBD0D50086F69E /* TomTomSDKBindingNavigationTextGenerationInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKBindingNavigationTextGenerationInternal;
+		};
+		98D393162BBBD0D50086F69E /* TomTomSDKBindingNavigationTileStoreAccessInternal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKBindingNavigationTileStoreAccessInternal;
+		};
+		98D3931B2BBBD21E0086F69E /* TomTomSDKRangeCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKRangeCalculator;
+		};
+		98D3931D2BBBD2260086F69E /* TomTomSDKReverseGeocoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKReverseGeocoder;
+		};
+		98D3931F2BBBD22B0086F69E /* TomTomSDKReverseGeocoderOnline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKReverseGeocoderOnline;
+		};
+		98D393212BBBD2350086F69E /* TomTomSDKMapDisplay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKMapDisplay;
+		};
+		98D393232BBBD2540086F69E /* TomTomSDKRouteReplanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKRouteReplanner;
+		};
+		98D393252BBBD25E0086F69E /* TomTomSDKSearchUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKSearchUI;
+		};
+		98D3933B2BBCA3790086F69E /* TomTomSDKSearchOnline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKSearchOnline;
+		};
+		98D3933D2BBCA3800086F69E /* TomTomSDKSearch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKSearch;
+		};
+		98D3933F2BBCA5640086F69E /* TomTomSDKSafetyLocationsDataAdapterOnline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKSafetyLocationsDataAdapterOnline;
+		};
+		98D393472BBCC5E10086F69E /* TomTomSDKRoutingCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKRoutingCommon;
+		};
+		98D393492BBCC5E80086F69E /* TomTomSDKRoutingVisualization */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKRoutingVisualization;
+		};
+		98D3934B2BBCC6B30086F69E /* TomTomSDKTraffic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKTraffic;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9814ED052BBBA51D0030524B /* Project object */;
+}
