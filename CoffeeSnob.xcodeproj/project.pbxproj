@@ -14,6 +14,7 @@
 		98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE72BBD1AF600872DA4 /* coffeemarker.png */; };
 		98723EEA2BBD245600872DA4 /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE92BBD245600872DA4 /* cafe.png */; };
 		98723EEC2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */; };
+		98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EED2BBE0B0100872DA4 /* markerBalloon.png */; };
 		98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */; };
 		98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */; };
 		98D393082BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */; };
@@ -33,13 +34,9 @@
 		98D3932C2BBBD8DA0086F69E /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3932B2BBBD8DA0086F69E /* RouteView.swift */; };
 		98D3932E2BBBDB290086F69E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3932D2BBBDB290086F69E /* AppDelegate.swift */; };
 		98D393302BBBDD330086F69E /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3932F2BBBDD330086F69E /* RouteViewController.swift */; };
-		98D393382BBCA3030086F69E /* CafeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393372BBCA3030086F69E /* CafeCardView.swift */; };
-		98D3933A2BBCA31A0086F69E /* CafeCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393392BBCA31A0086F69E /* CafeCardController.swift */; };
 		98D3933C2BBCA3790086F69E /* TomTomSDKSearchOnline in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3933B2BBCA3790086F69E /* TomTomSDKSearchOnline */; };
 		98D3933E2BBCA3800086F69E /* TomTomSDKSearch in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3933D2BBCA3800086F69E /* TomTomSDKSearch */; };
 		98D393402BBCA5640086F69E /* TomTomSDKSafetyLocationsDataAdapterOnline in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3933F2BBCA5640086F69E /* TomTomSDKSafetyLocationsDataAdapterOnline */; };
-		98D393442BBCC2720086F69E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393432BBCC2720086F69E /* SearchBarView.swift */; };
-		98D393462BBCC2F00086F69E /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D393452BBCC2F00086F69E /* SearchBarViewController.swift */; };
 		98D393482BBCC5E10086F69E /* TomTomSDKRoutingCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393472BBCC5E10086F69E /* TomTomSDKRoutingCommon */; };
 		98D3934A2BBCC5E80086F69E /* TomTomSDKRoutingVisualization in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393492BBCC5E80086F69E /* TomTomSDKRoutingVisualization */; };
 		98D3934C2BBCC6B30086F69E /* TomTomSDKTraffic in Frameworks */ = {isa = PBXBuildFile; productRef = 98D3934B2BBCC6B30086F69E /* TomTomSDKTraffic */; };
@@ -90,14 +87,11 @@
 		98723EE72BBD1AF600872DA4 /* coffeemarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coffeemarker.png; path = ../../../Downloads/coffeemarker.png; sourceTree = "<group>"; };
 		98723EE92BBD245600872DA4 /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe.png; path = ../../../Downloads/cafe.png; sourceTree = "<group>"; };
 		98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerBalloonView.swift; sourceTree = "<group>"; };
+		98723EED2BBE0B0100872DA4 /* markerBalloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = markerBalloon.png; path = ../../../Downloads/markerBalloon.png; sourceTree = "<group>"; };
 		98D3932A2BBBD5740086F69E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		98D3932B2BBBD8DA0086F69E /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		98D3932D2BBBDB290086F69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D3932F2BBBDD330086F69E /* RouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
-		98D393372BBCA3030086F69E /* CafeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCardView.swift; sourceTree = "<group>"; };
-		98D393392BBCA31A0086F69E /* CafeCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCardController.swift; sourceTree = "<group>"; };
-		98D393432BBCC2720086F69E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
-		98D393452BBCC2F00086F69E /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		98D3934D2BBCC8430086F69E /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		98D393512BBCCCBB0086F69E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +176,7 @@
 				98D3932D2BBBDB290086F69E /* AppDelegate.swift */,
 				9814ED122BBBA51E0030524B /* ContentView.swift */,
 				9814ED162BBBA51F0030524B /* Assets.xcassets */,
+				98723EED2BBE0B0100872DA4 /* markerBalloon.png */,
 				98723EE92BBD245600872DA4 /* cafe.png */,
 				98723EE72BBD1AF600872DA4 /* coffeemarker.png */,
 				9814ED182BBBA51F0030524B /* Preview Content */,
@@ -222,8 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
-				98D393372BBCA3030086F69E /* CafeCardView.swift */,
-				98D393432BBCC2720086F69E /* SearchBarView.swift */,
 				98D393512BBCCCBB0086F69E /* HeaderView.swift */,
 				98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */,
 			);
@@ -234,8 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				98D3932F2BBBDD330086F69E /* RouteViewController.swift */,
-				98D393392BBCA31A0086F69E /* CafeCardController.swift */,
-				98D393452BBCC2F00086F69E /* SearchBarViewController.swift */,
 				98D3934D2BBCC8430086F69E /* HeaderViewController.swift */,
 			);
 			path = "Controller ";
@@ -382,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */,
+				98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */,
 				9814ED172BBBA51F0030524B /* Assets.xcassets in Resources */,
 				98723EEA2BBD245600872DA4 /* cafe.png in Resources */,
 				98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */,
@@ -409,12 +401,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98D393382BBCA3030086F69E /* CafeCardView.swift in Sources */,
 				98D3932E2BBBDB290086F69E /* AppDelegate.swift in Sources */,
 				9814ED132BBBA51E0030524B /* ContentView.swift in Sources */,
-				98D3933A2BBCA31A0086F69E /* CafeCardController.swift in Sources */,
-				98D393442BBCC2720086F69E /* SearchBarView.swift in Sources */,
-				98D393462BBCC2F00086F69E /* SearchBarViewController.swift in Sources */,
 				98D3932C2BBBD8DA0086F69E /* RouteView.swift in Sources */,
 				98723EEC2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift in Sources */,
 				98D393522BBCCCBB0086F69E /* HeaderView.swift in Sources */,
