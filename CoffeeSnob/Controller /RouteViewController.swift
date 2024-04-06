@@ -19,6 +19,7 @@ class RouteViewController: UIViewController, MapViewDelegate {
     let cafeManager = CafeManager.shared
     let interactionManager = InteractionManager.shared
     let hamilton = CLLocationCoordinate2D(latitude: -37.750951, longitude: 175.208783)
+    var onMapReadyCallback: ((TomTomMap) -> ())?
     
     
     func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onMapReady map: TomTomSDKMapDisplay.TomTomMap) {
@@ -29,24 +30,57 @@ class RouteViewController: UIViewController, MapViewDelegate {
         print("TomTomMap: The map is ready for interaction.")
         
         self.map = map
+        
+        // Call the onMapReadyCallback closure if it's set
+               if let callback = onMapReadyCallback {
+                   callback(map)
+               }
+        
         addMarkers()
         
-        interactionManager.map(map, onInteraction:.interactionStarted )
-        
-        if let firstCafeCoordinate = cafeManager.getCafes().first?.coordinate {
-            
-            let coordinate = firstCafeCoordinate.toCLLocationCoordinate2D()
-            interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
+        // Add tap gesture recognizer directly to the mapView
+         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
+         mapView.addGestureRecognizer(tapGestureRecognizer)
+     }
+     
+    @objc func handleMapTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard gestureRecognizer.state == .ended else {
+            return // Ignore other states
+        }
+        guard let cameraUpdate = mapView?.cameraUpdate else {
+            return
         }
         
+//        let tapPoint = gestureRecognizer.location(in: mapView)
+        
+      if  let coordinate = cameraUpdate.position {
+            // Handle the tap using InteractionManager
+            interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
+        } else {
+            print("Error: No valid coordinate found.")
+        }
+        
+                interactionManager.map(map, onInteraction:.interactionStarted )
+        
+        
+        
+                if let firstCafeCoordinate = cafeManager.getCafes().first?.coordinate {
+        
+                    let coordinate = firstCafeCoordinate.toCLLocationCoordinate2D()
+                    interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
+                }
+        
+        
     }
+        
+
     
     
     
     
     
     
-    
+
     
     
     override func viewDidLoad() {
@@ -57,6 +91,24 @@ class RouteViewController: UIViewController, MapViewDelegate {
         map?.zoomToMarkers(marginPx: 1000)
         mapView?.delegate = self
         mapView?.isUserInteractionEnabled = true
+        map?.setExclusiveGestures(gesture: .tap, blockedGestures: [.pan, .pinch, .rotate, .tilt, .longPress])
+        
+        
+        //            // Set up the onMapReadyCallback closure
+        //            onMapReadyCallback = { [weak self] map in
+        //                guard let self = self else { return }
+        //
+        //                // Perform interactions with the map here
+        //                self.interactionManager.map(map, onInteraction: .interactionStarted)
+        //
+        //                if let firstCafeCoordinate = self.cafeManager.getCafes().first?.coordinate {
+        //                    let coordinate = firstCafeCoordinate.toCLLocationCoordinate2D()
+        //                    self.interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
+        //                }
+        //            }
+        //        }
+        //
+        //
         
     }
     
@@ -85,6 +137,7 @@ class RouteViewController: UIViewController, MapViewDelegate {
                 
             }
         }
+        
     }
     
     private func addMarkers() {
@@ -110,12 +163,12 @@ class RouteViewController: UIViewController, MapViewDelegate {
     
     
     
-    
+}
     
     
     
 
     
-}
+
     
   
