@@ -110,25 +110,102 @@ class InteractionManager {
             return topController
         }
         
+    
+ 
+
+    func handleTappedOnLocationMarker(coordinate: CLLocationCoordinate2D) {
+        /* Handle tapped on location marker */
+        let cafes = cafeManager.getCafes()
         
-        func handleTappedOnLocationMarker(coordinate: CLLocationCoordinate2D) {
-            /* Handle tapped on location marker */
-            let cafes = cafeManager.getCafes()
-            guard let tappedCafe = cafes.first(where: {$0.coordinate == CafeManager.LocationCoordinate(latitude: coordinate.latitude, longitude: coordinate.longitude) }) else {
-                return
-            }
-            // Display cafe name in an alert
-            let alert = UIAlertController(title: tappedCafe.name, message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            if let topViewController = topMostViewController() {
-                topViewController.present(alert, animated: true, completion: nil)
-            }
+        // Define a tolerance value for coordinate comparison
+        let tolerance: CLLocationDistance = 10 // 10 meters tolerance
+        
+        // Convert tapped coordinate to CLLocation
+        let tappedLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        
+        // Find the cafe corresponding to the tapped coordinate
+        for cafe in cafes {
+            let cafeLocation = CLLocation(latitude: cafe.coordinate.latitude, longitude: cafe.coordinate.longitude)
             
+            // Calculate distance between the tapped location and cafe location
+            let distance = tappedLocation.distance(from: cafeLocation)
             
+            if distance <= tolerance {
+                // Display cafe name in an alert
+                let alert = UIAlertController(title: cafe.name, message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                if let topViewController = topMostViewController() {
+                    topViewController.present(alert, animated: true, completion: nil)
+                }
+                
+                // Print the name of the tapped cafe
+                print("Tapped on cafe: \(cafe.name)")
+                
+                return // Exit the function after displaying the cafe name
+            }
         }
+        
+        // If no cafe corresponds to the tapped coordinate within the tolerance, log a message
+        print("No cafe found within \(tolerance) meters of the tapped location")
+    }
+
+//    func handleTappedOnLocationMarker(coordinate: CLLocationCoordinate2D) {
+//        /* Handle tapped on location marker */
+//        let cafes = cafeManager.getCafes()
+//        
+//        // Define a tolerance value for coordinate comparison
+//        let tolerance: CLLocationDegrees = 0.0001
+//        // Find the cafe corresponding to the tapped coordinate
+//          for cafe in cafes {
+//              let cafeCoordinate = cafe.coordinate.toCLLocationCoordinate2D()
+//              if abs(cafeCoordinate.latitude - coordinate.latitude) < tolerance &&
+//                  abs(cafeCoordinate.longitude - coordinate.longitude) < tolerance {
+//                  // Display cafe name in an alert
+//                  let alert = UIAlertController(title: cafe.name, message: nil, preferredStyle: .alert)
+//                  alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                  
+//                  if let topViewController = topMostViewController() {
+//                      topViewController.present(alert, animated: true, completion: nil)
+//                  }
+//                  
+//                  // Print the name of the tapped cafe
+//                  print("Tapped on cafe: \(cafe.name)")
+//                  
+//                  return // Exit the function after displaying the cafe name
+//              }
+//          }
+//          
+//          // If no cafe corresponds to the tapped coordinate, log a message
+//          print("No cafe found at the tapped location")
+//      }
+//        
+//        func handleTappedOnLocationMarker(coordinate: CLLocationCoordinate2D) {
+//            /* Handle tapped on location marker */
+//            let cafes = cafeManager.getCafes()
+//            
+//            // Find the cafe corresponding to the tapped coordinate
+//             guard let tappedCafe = cafes.first(where: { cafe in
+//                 let cafeCoordinate = cafe.coordinate.toCLLocationCoordinate2D()
+//                 return cafeCoordinate.latitude == coordinate.latitude &&
+//                        cafeCoordinate.longitude == coordinate.longitude
+//             }) else {
+//                 // If no cafe corresponds to the tapped coordinate, return
+//                 return
+//             
+//            }
+//            // Display cafe name in an alert
+//            let alert = UIAlertController(title: tappedCafe.name, message: nil, preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            if let topViewController = topMostViewController() {
+//                topViewController.present(alert, animated: true, completion: nil)
+//            }
+//            
+//            
+//        }
         func handleInteractionStarted() {
             // Handle interaction started
-            print("Interaction started")
+            print("@Interaction started")
         }
         
         func handleTapped(coordinate: CLLocationCoordinate2D) {
