@@ -13,7 +13,6 @@
 		9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9814ED192BBBA51F0030524B /* Preview Assets.xcassets */; };
 		98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE72BBD1AF600872DA4 /* coffeemarker.png */; };
 		98723EEA2BBD245600872DA4 /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE92BBD245600872DA4 /* cafe.png */; };
-		98723EEC2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */; };
 		98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EED2BBE0B0100872DA4 /* markerBalloon.png */; };
 		98723EFC2BC0C8E000872DA4 /* CafeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EFB2BC0C8E000872DA4 /* CafeCard.swift */; };
 		98723EFE2BC0CA6C00872DA4 /* CafeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EFD2BC0CA6C00872DA4 /* CafeCardView.swift */; };
@@ -24,6 +23,11 @@
 		98723F092BC105C800872DA4 /* InteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F082BC105C800872DA4 /* InteractionViewController.swift */; };
 		98723F0B2BC10A1500872DA4 /* TomTomSDKNavigationVisualization in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F0A2BC10A1500872DA4 /* TomTomSDKNavigationVisualization */; };
 		98723F0D2BC10A2000872DA4 /* TomTomSDKNavigationOffRoad in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F0C2BC10A2000872DA4 /* TomTomSDKNavigationOffRoad */; };
+		98723F112BC39C0900872DA4 /* TomTomSDKLocationProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F102BC39C0900872DA4 /* TomTomSDKLocationProvider */; };
+		98723F132BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F122BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder */; };
+		98723F152BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F142BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder */; };
+		98723F222BC3D43100872DA4 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98723F1B2BC3CAF500872DA4 /* Inter-Bold.ttf */; };
+		98723F232BC3D45C00872DA4 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE62BBCE52800872DA4 /* info.plist */; };
 		98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */; };
 		98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */; };
 		98D393082BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */; };
@@ -93,7 +97,6 @@
 		98723EE62BBCE52800872DA4 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		98723EE72BBD1AF600872DA4 /* coffeemarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coffeemarker.png; path = ../../../Downloads/coffeemarker.png; sourceTree = "<group>"; };
 		98723EE92BBD245600872DA4 /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe.png; path = ../../../Downloads/cafe.png; sourceTree = "<group>"; };
-		98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerBalloonView.swift; sourceTree = "<group>"; };
 		98723EED2BBE0B0100872DA4 /* markerBalloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = markerBalloon.png; path = ../../../Downloads/markerBalloon.png; sourceTree = "<group>"; };
 		98723EFB2BC0C8E000872DA4 /* CafeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCard.swift; sourceTree = "<group>"; };
 		98723EFD2BC0CA6C00872DA4 /* CafeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCardView.swift; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 		98723F012BC0D27E00872DA4 /* CafeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeManager.swift; sourceTree = "<group>"; };
 		98723F042BC0DD6200872DA4 /* InteractionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionManager.swift; sourceTree = "<group>"; };
 		98723F082BC105C800872DA4 /* InteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionViewController.swift; sourceTree = "<group>"; };
+		98723F192BC3C82A00872DA4 /* coffeemarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeemarker.png; sourceTree = "<group>"; };
+		98723F1B2BC3CAF500872DA4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../Inter-Bold.ttf"; sourceTree = "<group>"; };
 		98D3932A2BBBD5740086F69E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		98D3932B2BBBD8DA0086F69E /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		98D3932D2BBBDB290086F69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98723F152BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder in Frameworks */,
 				98723F0B2BC10A1500872DA4 /* TomTomSDKNavigationVisualization in Frameworks */,
 				98D393202BBBD22B0086F69E /* TomTomSDKReverseGeocoderOnline in Frameworks */,
 				98D393112BBBD0D50086F69E /* TomTomSDKBindingMapMatchingInternal in Frameworks */,
@@ -124,6 +130,7 @@
 				98D393152BBBD0D50086F69E /* TomTomSDKBindingNavigationTextGenerationInternal in Frameworks */,
 				98D393132BBBD0D50086F69E /* TomTomSDKBindingNDSLiveTileStoreAccessInternal in Frameworks */,
 				98723F0D2BC10A2000872DA4 /* TomTomSDKNavigationOffRoad in Frameworks */,
+				98723F132BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder in Frameworks */,
 				98D393262BBBD25E0086F69E /* TomTomSDKSearchUI in Frameworks */,
 				98D3933C2BBCA3790086F69E /* TomTomSDKSearchOnline in Frameworks */,
 				98D3930F2BBBD0D50086F69E /* TomTomSDKBindingFrameworkSecurityInternal in Frameworks */,
@@ -137,6 +144,7 @@
 				98D3933E2BBCA3800086F69E /* TomTomSDKSearch in Frameworks */,
 				98D3931E2BBBD2260086F69E /* TomTomSDKReverseGeocoder in Frameworks */,
 				98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */,
+				98723F112BC39C0900872DA4 /* TomTomSDKLocationProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +191,7 @@
 		9814ED0F2BBBA51E0030524B /* CoffeeSnob */ = {
 			isa = PBXGroup;
 			children = (
+				98723F182BC3C66E00872DA4 /* CafeAssets */,
 				98723F032BC0D28900872DA4 /* Models */,
 				98D393322BBCA2A70086F69E /* Controller  */,
 				98D393312BBBDD830086F69E /* View */,
@@ -190,6 +199,7 @@
 				98D3932D2BBBDB290086F69E /* AppDelegate.swift */,
 				9814ED122BBBA51E0030524B /* ContentView.swift */,
 				9814ED162BBBA51F0030524B /* Assets.xcassets */,
+				98723F1B2BC3CAF500872DA4 /* Inter-Bold.ttf */,
 				98723EED2BBE0B0100872DA4 /* markerBalloon.png */,
 				98723EE92BBD245600872DA4 /* cafe.png */,
 				98723EE72BBD1AF600872DA4 /* coffeemarker.png */,
@@ -229,6 +239,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		98723F182BC3C66E00872DA4 /* CafeAssets */ = {
+			isa = PBXGroup;
+			children = (
+				98723F192BC3C82A00872DA4 /* coffeemarker.png */,
+			);
+			path = CafeAssets;
+			sourceTree = "<group>";
+		};
 		98D3931A2BBBD21E0086F69E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
-				98723EEB2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift */,
 				98723EFB2BC0C8E000872DA4 /* CafeCard.swift */,
 				98723EFD2BC0CA6C00872DA4 /* CafeCardView.swift */,
 			);
@@ -300,6 +317,9 @@
 				98723F062BC1023200872DA4 /* TomTomSDKNavigation */,
 				98723F0A2BC10A1500872DA4 /* TomTomSDKNavigationVisualization */,
 				98723F0C2BC10A2000872DA4 /* TomTomSDKNavigationOffRoad */,
+				98723F102BC39C0900872DA4 /* TomTomSDKLocationProvider */,
+				98723F122BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder */,
+				98723F142BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder */,
 			);
 			productName = "Cafe-Project";
 			productReference = 9814ED0D2BBBA51E0030524B /* CoffeeSnob.app */;
@@ -393,6 +413,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98723F232BC3D45C00872DA4 /* info.plist in Resources */,
+				98723F222BC3D43100872DA4 /* Inter-Bold.ttf in Resources */,
 				9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */,
 				98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */,
 				9814ED172BBBA51F0030524B /* Assets.xcassets in Resources */,
@@ -429,7 +451,6 @@
 				98723F022BC0D27E00872DA4 /* CafeManager.swift in Sources */,
 				98723F092BC105C800872DA4 /* InteractionViewController.swift in Sources */,
 				98723F052BC0DD6200872DA4 /* InteractionManager.swift in Sources */,
-				98723EEC2BBD3E0100872DA4 /* CustomMarkerBalloonView.swift in Sources */,
 				98D393302BBBDD330086F69E /* RouteViewController.swift in Sources */,
 				98723EFE2BC0CA6C00872DA4 /* CafeCardView.swift in Sources */,
 				9814ED112BBBA51E0030524B /* CafeProjectApp.swift in Sources */,
@@ -600,6 +621,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = String;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -630,6 +653,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = String;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -799,6 +824,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
 			productName = TomTomSDKNavigationOffRoad;
+		};
+		98723F102BC39C0900872DA4 /* TomTomSDKLocationProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */;
+			productName = TomTomSDKLocationProvider;
+		};
+		98723F122BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKLocationTracesRecorder;
+		};
+		98723F142BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
+			productName = TomTomSDKUnifiedLocationDecoder;
 		};
 		98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */ = {
 			isa = XCSwiftPackageProductDependency;

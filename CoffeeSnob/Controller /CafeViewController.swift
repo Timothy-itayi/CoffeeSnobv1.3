@@ -1,70 +1,141 @@
-//import CoreLocation
-//import TomTomSDKMapDisplay
-//import UIKit
-//import TomTomSDKCommon
-//import TomTomSDKSearchOnline
-//import TomTomSDKSearch
-//import SwiftUI
-//
-//import SwiftUI
-//
-//struct CafeMapView: UIViewRepresentable {
-//    typealias UIViewType = CafeViewController
-//
-//    func makeUIView(context: Context) -> CafeViewController {
-//        return CafeViewController()
-//    }
-//
-//    func updateUIView(_ uiView: CafeViewController, context: Context) {
-//        // Update the view if needed
-//    }
-//}
-//
-//class CafeViewController: UIViewController, MapViewDelegate {
-//    var mapView: TomTomMap!
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        initializeMapView()
-//    }
-//    
-//    private func initializeMapView() {
-//        let styleContainer = StyleContainer.defaultStyle
-//        let cameraUpdate = CameraUpdate(position: CLLocationCoordinate2D(latitude: -37.77, longitude: 175.28), zoom: 10.0, tilt: 45, rotation: 0)
-//        let resourceCachePolicy = OnDiskCachePolicy.cache(duration: Measurement.tt.hours(10), maxSize: Measurement.tt.megabytes(200))
-//        let mapOptions = MapOptions(mapStyle: styleContainer, apiKey: "Your_API_Key", cameraUpdate: cameraUpdate, cachePolicy: resourceCachePolicy)
-//        
-//        DispatchQueue.main.async { [weak self] in
-//            guard let self = self else { return }
-//            self.mapView = MapView(mapOptions: mapOptions)
-//            self.mapView.delegate = self
-//            self.view.addSubview(self.mapView)
-//            self.mapView.translatesAutoresizingMaskIntoConstraints = false
-//            NSLayoutConstraint.activate([
-//                self.mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
-//                self.mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//                self.mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//                self.mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-//            ])
-//        }
-//    }
-//
-//    func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onMapReady map: TomTomSDKMapDisplay.TomTomMap) {
-//        print("MapViewDelegate - onMapReady")
-//    }
-//    
-//    func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onStyleLoad result: Result<TomTomSDKMapDisplay.StyleContainer, any Error>) {
-//        print("MapViewDelegate - onStyleLoad")
-//    }
-//    
-//    func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onInteraction interaction: MapInteraction) {
-//        switch interaction {
-//        case .tapped(coordinate: let coordinate):
-//            print("Tapped at coordinate: \(coordinate)")
-//            // Handle tapping on the map
-//        default:
-//            break
-//        }
-//    }
-//}
+import UIKit
+import CoreLocation
+class CafeViewController: UIViewController {
+    // Cafe object to display details
+    var cafe: CafeManager.Cafe
+    
+    
+    // CafeManager to access cafe array
+    var cafeManager: CafeManager?
+    
+    // UI elements
+    let nameLabel = UILabel()
+    let cafeImageView = UIImageView()
+    let addressLabel = UILabel()
+    let hoursLabel = UILabel()
+    // MARK: - Initialization
+    
+    init(cafe: CafeManager.Cafe, cafeManager: CafeManager) {
+        self.cafe = cafe
+        self.cafeManager = cafeManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        displayCafeDetails()
+        
+        modalPresentationStyle = .overCurrentContext
+    }
+    
+    // MARK: - UI Setup
+    
+    private func setupViews() {
+        view.backgroundColor = .white
+        
+        let bottomSheetHeight: CGFloat = 5
+        
+        preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: bottomSheetHeight)
+        
+        
+        
+        // Add name label
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = 2
+        view.addSubview(nameLabel)
+        
+        // Add cafe image view
+        cafeImageView.translatesAutoresizingMaskIntoConstraints = false
+        cafeImageView.contentMode = .scaleAspectFill
+        cafeImageView.clipsToBounds = true
+        view.addSubview(cafeImageView)
+        
+        
+        // Add address label
+        hoursLabel.translatesAutoresizingMaskIntoConstraints = false
+        hoursLabel.numberOfLines = 0
+        view.addSubview(hoursLabel)
+        
+        
+        // Layout constraints
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            cafeImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            cafeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            cafeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            cafeImageView.heightAnchor.constraint(equalToConstant: 200),
+            
+            
+            hoursLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            hoursLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            hoursLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    
+    // MARK: - Display Cafe Details
+    
+    private func displayCafeDetails() {
+        nameLabel.text = cafe.name
+        
+   
+        
+        // Assuming "YourCustomFontName" is the name of your custom font
+        if let customFont = UIFont(name: "Inter-Bold", size: 34) {
+            nameLabel.font = customFont
+        } else {
+            // Fallback to system font if custom font is not available
+            nameLabel.font = UIFont.systemFont(ofSize: 34)
+        }
+   
+            
+            
+        
+            // Load cafe image
+            if let imageURL = cafe.imageURL, let imageData = try? Data(contentsOf: imageURL) {
+                cafeImageView.image = UIImage(data: imageData)
+            }
+            
+            
+            // Determine status and time text
+            let statusText: String
+            let timeText: String
+            if cafe.isOpen() {
+                statusText = "Open"
+                hoursLabel.textColor = .green
+                timeText = "Closes \(closingTimeFormatted())"
+            } else {
+                statusText = "Closed"
+                hoursLabel.textColor = .red
+                timeText = ""
+            }
+            
+            // Concatenate status and time text
+            let statusAndTimeText = "\(statusText) \(timeText)"
+            
+            // Set label text
+            hoursLabel.text = statusAndTimeText
+        }
+        // Helper method to format closing time
+        private func closingTimeFormatted() -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            return dateFormatter.string(from: cafe.closingTime)
+        }
+    
+        
+        
+        
+    }
+

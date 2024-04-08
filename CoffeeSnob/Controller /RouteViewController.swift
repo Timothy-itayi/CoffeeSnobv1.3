@@ -6,8 +6,10 @@ import TomTomSDKSearchOnline
 import TomTomSDKSearch
 import SwiftUI
 import TomTomSDKNavigation
+import TomTomSDKLocationProvider
 
-class RouteViewController: UIViewController, MapViewDelegate {
+
+class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerDelegate {
     func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onStyleLoad result: Result<TomTomSDKMapDisplay.StyleContainer, any Error>) {
         
     }
@@ -20,16 +22,17 @@ class RouteViewController: UIViewController, MapViewDelegate {
     let interactionManager = InteractionManager.shared
     let hamilton = CLLocationCoordinate2D(latitude: -37.750951, longitude: 175.208783)
     var onMapReadyCallback: ((TomTomMap) -> ())?
-    
+
     
     func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onMapReady map: TomTomSDKMapDisplay.TomTomMap) {
         
         print("MapViewDelegate - onMapReady")
-        
+     
         // Print a message indicating that the map is ready
         print("TomTomMap: The map is ready for interaction.")
-        
+   
         self.map = map
+        
         
         // Call the onMapReadyCallback closure if it's set
                if let callback = onMapReadyCallback {
@@ -37,49 +40,54 @@ class RouteViewController: UIViewController, MapViewDelegate {
                }
         
         addMarkers()
+      // Check if the
+        let isCurrentLocationButtonVisible = mapView.isCurrentLocationButtonVisible
+        print("Is current location button visible? \(isCurrentLocationButtonVisible)")
+        
         
         // Add tap gesture recognizer directly to the mapView
          let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
          mapView.addGestureRecognizer(tapGestureRecognizer)
      }
-     
     @objc func handleMapTap(_ gestureRecognizer: UITapGestureRecognizer) {
         guard gestureRecognizer.state == .ended else {
             return // Ignore other states
         }
-        guard let cameraUpdate = mapView?.cameraUpdate else {
+        
+        // Get the tap point
+        let tapPoint = gestureRecognizer.location(in: mapView)
+        
+        // Find the marker closest to the tap point
+        var closestMarker: CafeManager.Cafe? = nil
+        var minDistanceSquared: Double = Double.infinity
+        
+        for cafeMarker in cafeManager.getCafes() {
+            let markerPoint = mapView?.map.pointForCoordinate(coordinate: cafeMarker.annotationCoordinate) ?? .zero
+            let distanceSquared = pow(Double(tapPoint.x - markerPoint.x), 2) + pow(Double(tapPoint.y - markerPoint.y), 2)
+            if distanceSquared < minDistanceSquared {
+                minDistanceSquared = distanceSquared
+                closestMarker = cafeMarker
+            }
+        }
+        
+        // Check if a marker was found within a certain tolerance
+        let toleranceSquared: Double = 15 * 15 // Tolerance of 100 points
+        guard minDistanceSquared <= toleranceSquared, let marker = closestMarker else {
+            // Tap is not on a marker or no marker is found within the tolerance
+            print("Tap is not on a marker.")
+            mapView?.map.isMarkersFadingEnabled = false
             return
         }
         
-//        let tapPoint = gestureRecognizer.location(in: mapView)
+        // Select the closest marker using its annotation
+        mapView?.map.isMarkersFadingEnabled = true 
+        mapView?.map.select(annotation: marker)
         
-      if  let coordinate = cameraUpdate.position {
-            // Handle the tap using InteractionManager
-            interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
-        } else {
-            print("Error: No valid coordinate found.")
-        }
-        
-                interactionManager.map(map, onInteraction:.interactionStarted )
-        
-        
-        
-                if let firstCafeCoordinate = cafeManager.getCafes().first?.coordinate {
-        
-                    let coordinate = firstCafeCoordinate.toCLLocationCoordinate2D()
-                    interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
-                }
-        
-        
+        // Handle the tap using InteractionManager
+        interactionManager.handleTappedOnLocationMarker(coordinate: marker.annotationCoordinate)
     }
-        
 
-    
-    
-    
-    
-    
-    
+
 
     
     
@@ -93,25 +101,15 @@ class RouteViewController: UIViewController, MapViewDelegate {
         mapView?.isUserInteractionEnabled = true
         map?.setExclusiveGestures(gesture: .tap, blockedGestures: [.pan, .pinch, .rotate, .tilt, .longPress])
         
+        mapView?.isLogoVisible = false
         
-        //            // Set up the onMapReadyCallback closure
-        //            onMapReadyCallback = { [weak self] map in
-        //                guard let self = self else { return }
-        //
-        //                // Perform interactions with the map here
-        //                self.interactionManager.map(map, onInteraction: .interactionStarted)
-        //
-        //                if let firstCafeCoordinate = self.cafeManager.getCafes().first?.coordinate {
-        //                    let coordinate = firstCafeCoordinate.toCLLocationCoordinate2D()
-        //                    self.interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
-        //                }
-        //            }
-        //        }
-        //
-        //
-        
+   
+   
     }
     
+  
+
+
     private func initializeMapView() {
         
         let styleContainer = StyleContainer.defaultStyle
@@ -125,16 +123,19 @@ class RouteViewController: UIViewController, MapViewDelegate {
             if let mapView = self.mapView {
                 mapView.delegate = self
                 self.view.addSubview(mapView)
+                
                 mapView.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
+                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
                     mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
                     mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
                 ])
                 
-                
-                
+               
+                mapView.currentLocationButtonVisibilityPolicy = .visible
+                mapView.compassButtonVisibilityPolicy = .hidden
+                mapView.isLogoVisible = false
             }
         }
         
