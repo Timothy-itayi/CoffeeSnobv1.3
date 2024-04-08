@@ -117,8 +117,8 @@ class InteractionManager {
         let cafes = cafeManager.getCafes()
         
         // Print the number of cafes and the tapped coordinate
-        print("Number of cafes: \(cafes.count)")
-        print("Tapped coordinate: \(coordinate)")
+    
+      
         
         // Define a tolerance value for coordinate comparison
         let tolerance: CLLocationDistance = 0.01 // 10 meters tolerance

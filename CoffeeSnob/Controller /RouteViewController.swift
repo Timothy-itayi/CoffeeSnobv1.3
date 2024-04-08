@@ -6,8 +6,10 @@ import TomTomSDKSearchOnline
 import TomTomSDKSearch
 import SwiftUI
 import TomTomSDKNavigation
+import TomTomSDKLocationProvider
 
-class RouteViewController: UIViewController, MapViewDelegate {
+
+class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerDelegate {
     func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onStyleLoad result: Result<TomTomSDKMapDisplay.StyleContainer, any Error>) {
         
     }
@@ -20,16 +22,17 @@ class RouteViewController: UIViewController, MapViewDelegate {
     let interactionManager = InteractionManager.shared
     let hamilton = CLLocationCoordinate2D(latitude: -37.750951, longitude: 175.208783)
     var onMapReadyCallback: ((TomTomMap) -> ())?
-    
+
     
     func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onMapReady map: TomTomSDKMapDisplay.TomTomMap) {
         
         print("MapViewDelegate - onMapReady")
-        
+     
         // Print a message indicating that the map is ready
         print("TomTomMap: The map is ready for interaction.")
-        
+   
         self.map = map
+        
         
         // Call the onMapReadyCallback closure if it's set
                if let callback = onMapReadyCallback {
@@ -37,6 +40,10 @@ class RouteViewController: UIViewController, MapViewDelegate {
                }
         
         addMarkers()
+      // Check if the
+        let isCurrentLocationButtonVisible = mapView.isCurrentLocationButtonVisible
+        print("Is current location button visible? \(isCurrentLocationButtonVisible)")
+        
         
         // Add tap gesture recognizer directly to the mapView
          let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
@@ -64,14 +71,16 @@ class RouteViewController: UIViewController, MapViewDelegate {
         }
         
         // Check if a marker was found within a certain tolerance
-        let toleranceSquared: Double = 50 * 50 // Tolerance of 100 points
+        let toleranceSquared: Double = 15 * 15 // Tolerance of 100 points
         guard minDistanceSquared <= toleranceSquared, let marker = closestMarker else {
             // Tap is not on a marker or no marker is found within the tolerance
             print("Tap is not on a marker.")
+            mapView?.map.isMarkersFadingEnabled = false
             return
         }
         
         // Select the closest marker using its annotation
+        mapView?.map.isMarkersFadingEnabled = true 
         mapView?.map.select(annotation: marker)
         
         // Handle the tap using InteractionManager
@@ -92,10 +101,15 @@ class RouteViewController: UIViewController, MapViewDelegate {
         mapView?.isUserInteractionEnabled = true
         map?.setExclusiveGestures(gesture: .tap, blockedGestures: [.pan, .pinch, .rotate, .tilt, .longPress])
         
+        mapView?.isLogoVisible = false
         
+   
    
     }
     
+  
+
+
     private func initializeMapView() {
         
         let styleContainer = StyleContainer.defaultStyle
@@ -109,16 +123,19 @@ class RouteViewController: UIViewController, MapViewDelegate {
             if let mapView = self.mapView {
                 mapView.delegate = self
                 self.view.addSubview(mapView)
+                
                 mapView.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
+                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
                     mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
                     mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
                 ])
                 
-                
-                
+               
+                mapView.currentLocationButtonVisibilityPolicy = .visible
+                mapView.compassButtonVisibilityPolicy = .hidden
+                mapView.isLogoVisible = false
             }
         }
         
