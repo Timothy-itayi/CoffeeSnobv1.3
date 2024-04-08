@@ -42,44 +42,43 @@ class RouteViewController: UIViewController, MapViewDelegate {
          let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
          mapView.addGestureRecognizer(tapGestureRecognizer)
      }
-     
     @objc func handleMapTap(_ gestureRecognizer: UITapGestureRecognizer) {
         guard gestureRecognizer.state == .ended else {
             return // Ignore other states
         }
-        guard let cameraUpdate = mapView?.cameraUpdate else {
+        
+        // Get the tap point
+        let tapPoint = gestureRecognizer.location(in: mapView)
+        
+        // Find the marker closest to the tap point
+        var closestMarker: CafeManager.Cafe? = nil
+        var minDistanceSquared: Double = Double.infinity
+        
+        for cafeMarker in cafeManager.getCafes() {
+            let markerPoint = mapView?.map.pointForCoordinate(coordinate: cafeMarker.annotationCoordinate) ?? .zero
+            let distanceSquared = pow(Double(tapPoint.x - markerPoint.x), 2) + pow(Double(tapPoint.y - markerPoint.y), 2)
+            if distanceSquared < minDistanceSquared {
+                minDistanceSquared = distanceSquared
+                closestMarker = cafeMarker
+            }
+        }
+        
+        // Check if a marker was found within a certain tolerance
+        let toleranceSquared: Double = 50 * 50 // Tolerance of 100 points
+        guard minDistanceSquared <= toleranceSquared, let marker = closestMarker else {
+            // Tap is not on a marker or no marker is found within the tolerance
+            print("Tap is not on a marker.")
             return
         }
         
-//        let tapPoint = gestureRecognizer.location(in: mapView)
+        // Select the closest marker using its annotation
+        mapView?.map.select(annotation: marker)
         
-      if  let coordinate = cameraUpdate.position {
-            // Handle the tap using InteractionManager
-            interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
-        } else {
-            print("Error: No valid coordinate found.")
-        }
-        
-                interactionManager.map(map, onInteraction:.interactionStarted )
-        
-        
-        
-                if let firstCafeCoordinate = cafeManager.getCafes().first?.coordinate {
-        
-                    let coordinate = firstCafeCoordinate.toCLLocationCoordinate2D()
-                    interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
-                }
-        
-        
+        // Handle the tap using InteractionManager
+        interactionManager.handleTappedOnLocationMarker(coordinate: marker.annotationCoordinate)
     }
-        
 
-    
-    
-    
-    
-    
-    
+
 
     
     
@@ -94,22 +93,7 @@ class RouteViewController: UIViewController, MapViewDelegate {
         map?.setExclusiveGestures(gesture: .tap, blockedGestures: [.pan, .pinch, .rotate, .tilt, .longPress])
         
         
-        //            // Set up the onMapReadyCallback closure
-        //            onMapReadyCallback = { [weak self] map in
-        //                guard let self = self else { return }
-        //
-        //                // Perform interactions with the map here
-        //                self.interactionManager.map(map, onInteraction: .interactionStarted)
-        //
-        //                if let firstCafeCoordinate = self.cafeManager.getCafes().first?.coordinate {
-        //                    let coordinate = firstCafeCoordinate.toCLLocationCoordinate2D()
-        //                    self.interactionManager.handleTappedOnLocationMarker(coordinate: coordinate)
-        //                }
-        //            }
-        //        }
-        //
-        //
-        
+   
     }
     
     private func initializeMapView() {

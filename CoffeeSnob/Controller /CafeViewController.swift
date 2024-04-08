@@ -1,70 +1,68 @@
-//import CoreLocation
-//import TomTomSDKMapDisplay
-//import UIKit
-//import TomTomSDKCommon
-//import TomTomSDKSearchOnline
-//import TomTomSDKSearch
-//import SwiftUI
-//
-//import SwiftUI
-//
-//struct CafeMapView: UIViewRepresentable {
-//    typealias UIViewType = CafeViewController
-//
-//    func makeUIView(context: Context) -> CafeViewController {
-//        return CafeViewController()
-//    }
-//
-//    func updateUIView(_ uiView: CafeViewController, context: Context) {
-//        // Update the view if needed
-//    }
-//}
-//
-//class CafeViewController: UIViewController, MapViewDelegate {
-//    var mapView: TomTomMap!
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        initializeMapView()
-//    }
-//    
-//    private func initializeMapView() {
-//        let styleContainer = StyleContainer.defaultStyle
-//        let cameraUpdate = CameraUpdate(position: CLLocationCoordinate2D(latitude: -37.77, longitude: 175.28), zoom: 10.0, tilt: 45, rotation: 0)
-//        let resourceCachePolicy = OnDiskCachePolicy.cache(duration: Measurement.tt.hours(10), maxSize: Measurement.tt.megabytes(200))
-//        let mapOptions = MapOptions(mapStyle: styleContainer, apiKey: "Your_API_Key", cameraUpdate: cameraUpdate, cachePolicy: resourceCachePolicy)
-//        
-//        DispatchQueue.main.async { [weak self] in
-//            guard let self = self else { return }
-//            self.mapView = MapView(mapOptions: mapOptions)
-//            self.mapView.delegate = self
-//            self.view.addSubview(self.mapView)
-//            self.mapView.translatesAutoresizingMaskIntoConstraints = false
-//            NSLayoutConstraint.activate([
-//                self.mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
-//                self.mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//                self.mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//                self.mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-//            ])
-//        }
-//    }
-//
-//    func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onMapReady map: TomTomSDKMapDisplay.TomTomMap) {
-//        print("MapViewDelegate - onMapReady")
-//    }
-//    
-//    func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onStyleLoad result: Result<TomTomSDKMapDisplay.StyleContainer, any Error>) {
-//        print("MapViewDelegate - onStyleLoad")
-//    }
-//    
-//    func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onInteraction interaction: MapInteraction) {
-//        switch interaction {
-//        case .tapped(coordinate: let coordinate):
-//            print("Tapped at coordinate: \(coordinate)")
-//            // Handle tapping on the map
-//        default:
-//            break
-//        }
-//    }
-//}
+import UIKit
+import CoreLocation
+class CafeViewController: UIViewController {
+    // Cafe object to display details
+       var cafe: CafeManager.Cafe
+
+  
+    // CafeManager to access cafe array
+    var cafeManager: CafeManager?
+    
+    // UI elements
+    let nameLabel = UILabel()
+    let addressLabel = UILabel()
+    
+    // MARK: - Initialization
+    
+    init(cafe: CafeManager.Cafe, cafeManager: CafeManager) {
+        self.cafe = cafe
+        self.cafeManager = cafeManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        displayCafeDetails()
+    }
+    
+    // MARK: - UI Setup
+    
+    private func setupViews() {
+        view.backgroundColor = .white
+        
+        // Add name label
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        view.addSubview(nameLabel)
+        
+        // Add address label
+        addressLabel.translatesAutoresizingMaskIntoConstraints = false
+        addressLabel.numberOfLines = 0
+        view.addSubview(addressLabel)
+        
+        // Layout constraints
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            addressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            addressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    // MARK: - Display Cafe Details
+    
+    private func displayCafeDetails() {
+        nameLabel.text = cafe.name
+       
+    }
+}
