@@ -45,6 +45,8 @@
 		98723F5B2BC4E99F00872DA4 /* melbourneMapinteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5A2BC4E99F00872DA4 /* melbourneMapinteraction.swift */; };
 		98723F5D2BC4EDA500872DA4 /* MelCafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */; };
 		98723F5F2BC4F30300872DA4 /* MelbourneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5E2BC4F30300872DA4 /* MelbourneView.swift */; };
+		98723F652BC52D5700872DA4 /* CoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F642BC52D5700872DA4 /* CoffeeView.swift */; };
+		98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F662BC52D9800872DA4 /* LandingViewController.swift */; };
 		98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */; };
 		98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */; };
 		98D393082BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */; };
@@ -141,6 +143,10 @@
 		98723F5A2BC4E99F00872DA4 /* melbourneMapinteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = melbourneMapinteraction.swift; sourceTree = "<group>"; };
 		98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelCafeView.swift; sourceTree = "<group>"; };
 		98723F5E2BC4F30300872DA4 /* MelbourneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelbourneView.swift; sourceTree = "<group>"; };
+		98723F642BC52D5700872DA4 /* CoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeView.swift; sourceTree = "<group>"; };
+		98723F662BC52D9800872DA4 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		98723F692BC533C000872DA4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		98723F6A2BC535C200872DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		98D3932A2BBBD5740086F69E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		98D3932B2BBBD8DA0086F69E /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		98D3932D2BBBDB290086F69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 		9814ED0F2BBBA51E0030524B /* CoffeeSnob */ = {
 			isa = PBXGroup;
 			children = (
+				98723F6A2BC535C200872DA4 /* Info.plist */,
+				98723F682BC533B700872DA4 /* assests */,
 				98723F432BC4C40B00872DA4 /* Cafeimages */,
 				98723F032BC0D28900872DA4 /* Models */,
 				98D393322BBCA2A70086F69E /* Controller  */,
@@ -365,6 +373,14 @@
 			path = ../../Cafeimages;
 			sourceTree = "<group>";
 		};
+		98723F682BC533B700872DA4 /* assests */ = {
+			isa = PBXGroup;
+			children = (
+				98723F692BC533C000872DA4 /* Inter-Bold.ttf */,
+			);
+			path = assests;
+			sourceTree = "<group>";
+		};
 		98D3931A2BBBD21E0086F69E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
+				98723F642BC52D5700872DA4 /* CoffeeView.swift */,
 				98723F5E2BC4F30300872DA4 /* MelbourneView.swift */,
 			);
 			path = View;
@@ -388,6 +405,7 @@
 				98723EFF2BC0CAE600872DA4 /* CafeViewController.swift */,
 				98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */,
 				98723F542BC4E03600872DA4 /* MelbourneMapViewController.swift */,
+				98723F662BC52D9800872DA4 /* LandingViewController.swift */,
 			);
 			path = "Controller ";
 			sourceTree = "<group>";
@@ -586,9 +604,11 @@
 				98723F572BC4E0C000872DA4 /* MelbourneCafeManager.swift in Sources */,
 				98723F052BC0DD6200872DA4 /* InteractionManager.swift in Sources */,
 				98D393302BBBDD330086F69E /* RouteViewController.swift in Sources */,
+				98723F652BC52D5700872DA4 /* CoffeeView.swift in Sources */,
 				98723F5D2BC4EDA500872DA4 /* MelCafeView.swift in Sources */,
 				98723F552BC4E03600872DA4 /* MelbourneMapViewController.swift in Sources */,
 				9814ED112BBBA51E0030524B /* CafeProjectApp.swift in Sources */,
+				98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */,
 				98723F5B2BC4E99F00872DA4 /* melbourneMapinteraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,7 +775,7 @@
 				DEVELOPMENT_TEAM = WRJXN2DGS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = CoffeeSnob/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = String;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -787,7 +807,7 @@
 				DEVELOPMENT_TEAM = WRJXN2DGS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = CoffeeSnob/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = String;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

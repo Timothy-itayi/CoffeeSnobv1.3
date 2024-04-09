@@ -10,9 +10,5 @@
 	<string>CoffeeSnob needs access to your location to provide certain features.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>CoffeeSnob needs access to your location while you are using it.</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Inter-Bold.ttf</string>
-	</array>
 </dict>
 </plist>
