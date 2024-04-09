@@ -15,7 +15,7 @@ struct ContentView: View {
                 
                 
                 // Title of the app
-                Text("Coffee Snob")
+                Text("Welcome to Coffee Snob")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
@@ -26,28 +26,28 @@ struct ContentView: View {
                 NavigationLink(destination: RouteView())  {
                     // Handle submission of text here
                     
-                    Text("Start the Snobbery")
+                    Text("Hamilton")
                     
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue) // Set button background color
-                        .foregroundColor(.white) // Set button text color
+                        .background(Color.black) // Set button background color
+                        .foregroundColor(.yellow) // Set button text color
                         .font(.headline) // Set button text font
                         .cornerRadius(10) // Add rounded corners
                         .shadow(color: Color.black.opacity(0.3), radius: 3, x: 0, y: 2) // Add shadow
                 }
                 .padding(.horizontal) // Add horizontal padding
                 
-                NavigationLink(destination: RouteView()){
-                    Text("Cafe Card")
+                NavigationLink(destination: MelbourneMapView()){
+                    Text("Melbourne")
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue) // Set button background color
-                        .foregroundColor(.white) // Set button text color
+                        .background(Color.black) // Set button background color
+                        .foregroundColor(.yellow) // Set button text color
                         .font(.headline) // Set button text font
                         .cornerRadius(10) // Add rounded corners
                         .shadow(color: Color.black.opacity(0.3), radius: 3, x: 0, y: 2) // Add shadow
-                        .padding()
+                       
                 }
                 .padding()
                 .navigationBarTitle("") // Hide the default navigation title
