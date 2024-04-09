@@ -9,7 +9,7 @@ import TomTomSDKNavigation
 import TomTomSDKLocationProvider
 
 
-class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerDelegate {
+class MelbourneMapViewController: UIViewController, MapViewDelegate, CLLocationManagerDelegate {
     func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onStyleLoad result: Result<TomTomSDKMapDisplay.StyleContainer, any Error>) {
         
     }
@@ -18,9 +18,9 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
     
     var map: TomTomMap!
     var mapView: MapView?
-    let cafeManager = CafeManager.shared
-    let interactionManager = InteractionManager.shared
-    let hamilton = CLLocationCoordinate2D(latitude: -37.750951, longitude: 175.208783)
+    let melbournecafeManager = MelbourneCafeManager.shared
+    let melbourneinteractionManager = MelbourneInteractionManager.shared
+    let melbourne = CLLocationCoordinate2D(latitude: -37.8136, longitude: 144.9631)
     var onMapReadyCallback: ((TomTomMap) -> ())?
 
     
@@ -41,9 +41,7 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
         
         addMarkers()
       // Check if the
-        let isCurrentLocationButtonVisible = mapView.isCurrentLocationButtonVisible
-        print("Is current location button visible? \(isCurrentLocationButtonVisible)")
-        
+    
         
         // Add tap gesture recognizer directly to the mapView
          let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
@@ -58,10 +56,10 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
         let tapPoint = gestureRecognizer.location(in: mapView)
         
         // Find the marker closest to the tap point
-        var closestMarker: CafeManager.Cafe? = nil
+        var closestMarker: MelbourneCafeManager.Cafe? = nil
         var minDistanceSquared: Double = Double.infinity
         
-        for cafeMarker in cafeManager.getCafes() {
+        for cafeMarker in melbournecafeManager.getMelCafes() {
             let markerPoint = mapView?.map.pointForCoordinate(coordinate: cafeMarker.annotationCoordinate) ?? .zero
             let distanceSquared = pow(Double(tapPoint.x - markerPoint.x), 2) + pow(Double(tapPoint.y - markerPoint.y), 2)
             if distanceSquared < minDistanceSquared {
@@ -80,11 +78,11 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
         }
         
         // Select the closest marker using its annotation
-        mapView?.map.isMarkersFadingEnabled = true 
+        mapView?.map.isMarkersFadingEnabled = true
         mapView?.map.select(annotation: marker)
         
         // Handle the tap using InteractionManager
-        interactionManager.handleTappedOnLocationMarker(coordinate: marker.annotationCoordinate)
+        melbourneinteractionManager.handleTappedOnLocationMarker(coordinate: marker.annotationCoordinate)
     }
 
 
@@ -93,7 +91,7 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cafeManager.setupCafes()
+        melbournecafeManager.setupCafes()
         initializeMapView()
         addMarkers()
         map?.zoomToMarkers(marginPx: 1000)
@@ -113,7 +111,7 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
     private func initializeMapView() {
         
         let styleContainer = StyleContainer.defaultStyle
-        let cameraUpdate = CameraUpdate(position: CLLocationCoordinate2D(latitude: -37.77, longitude: 175.28), zoom: 11, tilt: 45, rotation: 0)
+        let cameraUpdate = CameraUpdate(position: CLLocationCoordinate2D(latitude: -37.8142454, longitude: 144.9631), zoom: 12.6, tilt: 45, rotation: 0)
         let resourceCachePolicy = OnDiskCachePolicy.cache(duration: Measurement.tt.hours(10), maxSize: Measurement.tt.megabytes(200))
         let mapOptions = MapOptions(mapStyle: styleContainer, apiKey: "pI4kmVlG64hsmsxz9fLKoMtXOmLVgaJW", cameraUpdate: cameraUpdate, cachePolicy: resourceCachePolicy)
         
@@ -144,7 +142,7 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
     private func addMarkers() {
         guard let map = map else { return }
         
-        let cafes = cafeManager.getCafes()
+        let cafes = melbournecafeManager.getMelCafes()
         // Loop through each cafe of cafes, creating a MarkerOptions object with the cafe's coordinates
         for cafe in  cafes {
             var markerOptions = MarkerOptions(coordinate: cafe.coordinate.toCLLocationCoordinate2D())
@@ -155,6 +153,8 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
                 let marker = try map.addMarker(options: markerOptions)
                 marker.isVisible = true
                 marker.isSelectable = true
+                
+       
             } catch {
                 print("Failed to add marker: \(error)")
             }

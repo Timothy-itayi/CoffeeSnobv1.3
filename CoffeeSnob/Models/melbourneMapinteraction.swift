@@ -4,38 +4,13 @@ import TomTomSDKMapDisplay
 import TomTomSDKNavigation
 
 
-protocol MapInteractionDelegate: AnyObject {
-    func map(_ map: TomTomMap, onInteraction interaction: MapInteraction)
-}
-class InteractionManager {
-    static let shared = InteractionManager()
-    
-    struct LocationCoordinate: Equatable {
-        let latitude: CLLocationDegrees
-        let longitude: CLLocationDegrees
-        
-        init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-            self.latitude = latitude
-            self.longitude = longitude
-        }
-        
-        static func ==(lhs: LocationCoordinate, rhs: LocationCoordinate) -> Bool {
-            return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
-        }
-        func toCLLocationCoordinate2D() -> CLLocationCoordinate2D {
-            return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
-        }
-    }
-    
-    let cafeManager = CafeManager.shared
-  
-    
-    func map(_ map: TomTomMap, onInteraction interaction: MapInteraction) {
-        
+
+class MelbourneInteractionManager: MapInteractionDelegate {
+    func map(_ map: TomTomSDKMapDisplay.TomTomMap, onInteraction interaction: TomTomSDKMapDisplay.MapInteraction) {
         switch interaction {
         case .interactionStarted:
             handleInteractionStarted()
-   
+            
             
         case let .tapped(coordinate):
             /* Handle tapped on map */
@@ -44,7 +19,7 @@ class InteractionManager {
             
         case let .tappedOnAnnotation(annotation, _):
             /* Handle tapped on annotation */
-            if let cafeAnnotation = annotation as? CafeManager.Cafe {
+            if let cafeAnnotation = annotation as? MelbourneCafeManager.Cafe {
                 // If the annotation is a cafe, you can access its properties
                 print("Tapped on cafe: \(cafeAnnotation.name)")
                 
@@ -97,28 +72,52 @@ class InteractionManager {
             
         }
     }
-        func topMostViewController() -> UIViewController? {
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                  let window = windowScene.windows.first else {
-                return nil
-            }
-            
-            var topController = window.rootViewController
-            while let presentedViewController = topController?.presentedViewController {
-                topController = presentedViewController
-            }
-            return topController
+    
+    static let shared = MelbourneInteractionManager()
+    
+    struct LocationCoordinate: Equatable {
+        let latitude: CLLocationDegrees
+        let longitude: CLLocationDegrees
+        
+        init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+            self.latitude = latitude
+            self.longitude = longitude
         }
         
+        static func ==(lhs: LocationCoordinate, rhs: LocationCoordinate) -> Bool {
+            return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+        }
+        func toCLLocationCoordinate2D() -> CLLocationCoordinate2D {
+            return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+        }
+    }
     
- 
+    let melbournecafeManager = MelbourneCafeManager.shared
+    
+    
+    
+    func topMostViewController() -> UIViewController? {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else {
+            return nil
+        }
+        
+        var topController = window.rootViewController
+        while let presentedViewController = topController?.presentedViewController {
+            topController = presentedViewController
+        }
+        return topController
+    }
+    
+    
+    
     func handleTappedOnLocationMarker(coordinate: CLLocationCoordinate2D) {
         /* Handle tapped on location marker */
-        let cafes = cafeManager.getCafes()
+        let cafes = melbournecafeManager.getMelCafes()
         
         // Print the number of cafes and the tapped coordinate
-    
-      
+        
+        
         
         // Define a tolerance value for coordinate comparison
         let tolerance: CLLocationDistance = 0.01 // 10 meters tolerance
@@ -135,7 +134,7 @@ class InteractionManager {
          
             if distance <= tolerance {
                 // Instantiate and present the cafe card view controller
-                let cafeCardViewController = CafeViewController(cafe: cafe, cafeManager: cafeManager)
+                let cafeCardViewController = MelCafeViewController(cafe: cafe, melbournecafeManager: melbournecafeManager)
                 
                 // Get the current window
                 if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -149,25 +148,25 @@ class InteractionManager {
                 return // Exit the function after presenting the cafe card
             }
         }
-    
-
-
-        
-        
         // If no cafe corresponds to the tapped coordinate within the tolerance, log a message
         print("No cafe found within \(tolerance) meters of the tapped location")
-    }
-
-
-        func handleInteractionStarted() {
-            // Handle interaction started
-            print("@Interaction started")
-        }
         
-        func handleTapped(coordinate: CLLocationCoordinate2D) {
-            print("Tapped on coordinate: \(coordinate)")
-        }
+        
         
     }
-
+    
+    
+    func handleInteractionStarted() {
+        // Handle interaction started
+        print("@Interaction started")
+    }
+    
+    func handleTapped(coordinate: CLLocationCoordinate2D) {
+        print("Tapped on coordinate: \(coordinate)")
+    }
+    
+    
+    
+    
+}
 

@@ -1,12 +1,12 @@
 import UIKit
 import CoreLocation
-class CafeViewController: UIViewController {
+class MelCafeViewController: UIViewController {
     // Cafe object to display details
-    var cafe: CafeManager.Cafe
+    var cafe: MelbourneCafeManager.Cafe
     
     
     // CafeManager to access cafe array
-    var cafeManager: CafeManager?
+    var melbournecafeManager: MelbourneCafeManager?
     
     // UI elements
     let nameLabel = UILabel()
@@ -16,9 +16,9 @@ class CafeViewController: UIViewController {
     let descriptionLabel = UILabel()
     // MARK: - Initialization
     
-    init(cafe: CafeManager.Cafe, cafeManager: CafeManager) {
+    init(cafe: MelbourneCafeManager.Cafe, melbournecafeManager:MelbourneCafeManager) {
         self.cafe = cafe
-        self.cafeManager = cafeManager
+        self.melbournecafeManager = melbournecafeManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,7 +33,7 @@ class CafeViewController: UIViewController {
         setupViews()
         displayCafeDetails()
         
-      
+        
     }
     
     // MARK: - UI Setup
@@ -90,7 +90,7 @@ class CafeViewController: UIViewController {
         
         descriptionLabel.text = cafe.description
         addressLabel.text = cafe.address
-     
+        
         // Determine status and time text
         let statusText: String
         let timeText: String
@@ -101,7 +101,7 @@ class CafeViewController: UIViewController {
         } else {
             statusText = "Closed"
             hoursLabel.textColor = .red
-            timeText = "opens \(openingTimeFormatted(cafe.openingTime)) "
+            timeText = " "
         }
         
         // Concatenate status and time text
@@ -111,18 +111,12 @@ class CafeViewController: UIViewController {
         hoursLabel.text = statusAndTimeText
         
         // Helper method to format closing time
-      func closingTimeFormatted(_ closingTime: Date) -> String {
+        func closingTimeFormatted(_ closingTime: Date) -> String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
             return dateFormatter.string(from: closingTime)
         }
         
-        // Helper method to format opening time
-        func openingTimeFormatted(_ openingTime: Date) -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "h:mm a"
-            return dateFormatter.string(from: openingTime)
-        }
         
     }
 }

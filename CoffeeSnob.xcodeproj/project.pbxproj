@@ -14,20 +14,39 @@
 		98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE72BBD1AF600872DA4 /* coffeemarker.png */; };
 		98723EEA2BBD245600872DA4 /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE92BBD245600872DA4 /* cafe.png */; };
 		98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EED2BBE0B0100872DA4 /* markerBalloon.png */; };
-		98723EFC2BC0C8E000872DA4 /* CafeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EFB2BC0C8E000872DA4 /* CafeCard.swift */; };
-		98723EFE2BC0CA6C00872DA4 /* CafeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EFD2BC0CA6C00872DA4 /* CafeCardView.swift */; };
 		98723F002BC0CAE600872DA4 /* CafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723EFF2BC0CAE600872DA4 /* CafeViewController.swift */; };
 		98723F022BC0D27E00872DA4 /* CafeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F012BC0D27E00872DA4 /* CafeManager.swift */; };
 		98723F052BC0DD6200872DA4 /* InteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F042BC0DD6200872DA4 /* InteractionManager.swift */; };
 		98723F072BC1023200872DA4 /* TomTomSDKNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F062BC1023200872DA4 /* TomTomSDKNavigation */; };
-		98723F092BC105C800872DA4 /* InteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F082BC105C800872DA4 /* InteractionViewController.swift */; };
 		98723F0B2BC10A1500872DA4 /* TomTomSDKNavigationVisualization in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F0A2BC10A1500872DA4 /* TomTomSDKNavigationVisualization */; };
 		98723F0D2BC10A2000872DA4 /* TomTomSDKNavigationOffRoad in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F0C2BC10A2000872DA4 /* TomTomSDKNavigationOffRoad */; };
 		98723F112BC39C0900872DA4 /* TomTomSDKLocationProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F102BC39C0900872DA4 /* TomTomSDKLocationProvider */; };
 		98723F132BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F122BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder */; };
 		98723F152BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 98723F142BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder */; };
 		98723F222BC3D43100872DA4 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98723F1B2BC3CAF500872DA4 /* Inter-Bold.ttf */; };
-		98723F232BC3D45C00872DA4 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE62BBCE52800872DA4 /* info.plist */; };
+		98723F442BC4C40B00872DA4 /* cinnamon1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F2B2BC4C40B00872DA4 /* cinnamon1.jpeg */; };
+		98723F452BC4C40B00872DA4 /* cinnamon2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F2C2BC4C40B00872DA4 /* cinnamon2.jpeg */; };
+		98723F462BC4C40B00872DA4 /* cafefresca1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F2E2BC4C40B00872DA4 /* cafefresca1.jpeg */; };
+		98723F472BC4C40B00872DA4 /* cafefresca2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F2F2BC4C40B00872DA4 /* cafefresca2.jpeg */; };
+		98723F482BC4C40B00872DA4 /* gardens1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F312BC4C40B00872DA4 /* gardens1.jpeg */; };
+		98723F492BC4C40B00872DA4 /* gardens2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F322BC4C40B00872DA4 /* gardens2.jpeg */; };
+		98723F4A2BC4C40B00872DA4 /* cafekirk1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F342BC4C40B00872DA4 /* cafekirk1.jpeg */; };
+		98723F4B2BC4C40B00872DA4 /* cafekirk2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F352BC4C40B00872DA4 /* cafekirk2.jpeg */; };
+		98723F4C2BC4C40B00872DA4 /* lola1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F372BC4C40B00872DA4 /* lola1.jpeg */; };
+		98723F4D2BC4C40B00872DA4 /* lola2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F382BC4C40B00872DA4 /* lola2.jpeg */; };
+		98723F4E2BC4C40B00872DA4 /* markyle1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F3A2BC4C40B00872DA4 /* markyle1.jpeg */; };
+		98723F4F2BC4C40B00872DA4 /* markyle2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F3B2BC4C40B00872DA4 /* markyle2.jpeg */; };
+		98723F502BC4C40B00872DA4 /* riverkitchen1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F3D2BC4C40B00872DA4 /* riverkitchen1.jpeg */; };
+		98723F512BC4C40B00872DA4 /* riverkitchen2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F3E2BC4C40B00872DA4 /* riverkitchen2.jpeg */; };
+		98723F522BC4C40B00872DA4 /* sugar1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F402BC4C40B00872DA4 /* sugar1.jpeg */; };
+		98723F532BC4C40B00872DA4 /* sugar2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 98723F412BC4C40B00872DA4 /* sugar2.jpeg */; };
+		98723F552BC4E03600872DA4 /* MelbourneMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F542BC4E03600872DA4 /* MelbourneMapViewController.swift */; };
+		98723F572BC4E0C000872DA4 /* MelbourneCafeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F562BC4E0C000872DA4 /* MelbourneCafeManager.swift */; };
+		98723F5B2BC4E99F00872DA4 /* melbourneMapinteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5A2BC4E99F00872DA4 /* melbourneMapinteraction.swift */; };
+		98723F5D2BC4EDA500872DA4 /* MelCafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */; };
+		98723F5F2BC4F30300872DA4 /* MelbourneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5E2BC4F30300872DA4 /* MelbourneView.swift */; };
+		98723F652BC52D5700872DA4 /* CoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F642BC52D5700872DA4 /* CoffeeView.swift */; };
+		98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F662BC52D9800872DA4 /* LandingViewController.swift */; };
 		98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */; };
 		98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */; };
 		98D393082BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */; };
@@ -98,14 +117,36 @@
 		98723EE72BBD1AF600872DA4 /* coffeemarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coffeemarker.png; path = ../../../Downloads/coffeemarker.png; sourceTree = "<group>"; };
 		98723EE92BBD245600872DA4 /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe.png; path = ../../../Downloads/cafe.png; sourceTree = "<group>"; };
 		98723EED2BBE0B0100872DA4 /* markerBalloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = markerBalloon.png; path = ../../../Downloads/markerBalloon.png; sourceTree = "<group>"; };
-		98723EFB2BC0C8E000872DA4 /* CafeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCard.swift; sourceTree = "<group>"; };
-		98723EFD2BC0CA6C00872DA4 /* CafeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeCardView.swift; sourceTree = "<group>"; };
 		98723EFF2BC0CAE600872DA4 /* CafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeViewController.swift; sourceTree = "<group>"; };
 		98723F012BC0D27E00872DA4 /* CafeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeManager.swift; sourceTree = "<group>"; };
 		98723F042BC0DD6200872DA4 /* InteractionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionManager.swift; sourceTree = "<group>"; };
-		98723F082BC105C800872DA4 /* InteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionViewController.swift; sourceTree = "<group>"; };
-		98723F192BC3C82A00872DA4 /* coffeemarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeemarker.png; sourceTree = "<group>"; };
 		98723F1B2BC3CAF500872DA4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../Inter-Bold.ttf"; sourceTree = "<group>"; };
+		98723F272BC4928800872DA4 /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cafe.png; sourceTree = "<group>"; };
+		98723F2B2BC4C40B00872DA4 /* cinnamon1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cinnamon1.jpeg; sourceTree = "<group>"; };
+		98723F2C2BC4C40B00872DA4 /* cinnamon2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cinnamon2.jpeg; sourceTree = "<group>"; };
+		98723F2E2BC4C40B00872DA4 /* cafefresca1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cafefresca1.jpeg; sourceTree = "<group>"; };
+		98723F2F2BC4C40B00872DA4 /* cafefresca2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cafefresca2.jpeg; sourceTree = "<group>"; };
+		98723F312BC4C40B00872DA4 /* gardens1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gardens1.jpeg; sourceTree = "<group>"; };
+		98723F322BC4C40B00872DA4 /* gardens2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gardens2.jpeg; sourceTree = "<group>"; };
+		98723F342BC4C40B00872DA4 /* cafekirk1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cafekirk1.jpeg; sourceTree = "<group>"; };
+		98723F352BC4C40B00872DA4 /* cafekirk2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cafekirk2.jpeg; sourceTree = "<group>"; };
+		98723F372BC4C40B00872DA4 /* lola1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lola1.jpeg; sourceTree = "<group>"; };
+		98723F382BC4C40B00872DA4 /* lola2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lola2.jpeg; sourceTree = "<group>"; };
+		98723F3A2BC4C40B00872DA4 /* markyle1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = markyle1.jpeg; sourceTree = "<group>"; };
+		98723F3B2BC4C40B00872DA4 /* markyle2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = markyle2.jpeg; sourceTree = "<group>"; };
+		98723F3D2BC4C40B00872DA4 /* riverkitchen1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = riverkitchen1.jpeg; sourceTree = "<group>"; };
+		98723F3E2BC4C40B00872DA4 /* riverkitchen2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = riverkitchen2.jpeg; sourceTree = "<group>"; };
+		98723F402BC4C40B00872DA4 /* sugar1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sugar1.jpeg; sourceTree = "<group>"; };
+		98723F412BC4C40B00872DA4 /* sugar2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sugar2.jpeg; sourceTree = "<group>"; };
+		98723F542BC4E03600872DA4 /* MelbourneMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelbourneMapViewController.swift; sourceTree = "<group>"; };
+		98723F562BC4E0C000872DA4 /* MelbourneCafeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelbourneCafeManager.swift; sourceTree = "<group>"; };
+		98723F5A2BC4E99F00872DA4 /* melbourneMapinteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = melbourneMapinteraction.swift; sourceTree = "<group>"; };
+		98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelCafeView.swift; sourceTree = "<group>"; };
+		98723F5E2BC4F30300872DA4 /* MelbourneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelbourneView.swift; sourceTree = "<group>"; };
+		98723F642BC52D5700872DA4 /* CoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeView.swift; sourceTree = "<group>"; };
+		98723F662BC52D9800872DA4 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		98723F692BC533C000872DA4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		98723F6A2BC535C200872DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		98D3932A2BBBD5740086F69E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		98D3932B2BBBD8DA0086F69E /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		98D3932D2BBBDB290086F69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,7 +232,9 @@
 		9814ED0F2BBBA51E0030524B /* CoffeeSnob */ = {
 			isa = PBXGroup;
 			children = (
-				98723F182BC3C66E00872DA4 /* CafeAssets */,
+				98723F6A2BC535C200872DA4 /* Info.plist */,
+				98723F682BC533B700872DA4 /* assests */,
+				98723F432BC4C40B00872DA4 /* Cafeimages */,
 				98723F032BC0D28900872DA4 /* Models */,
 				98D393322BBCA2A70086F69E /* Controller  */,
 				98D393312BBBDD830086F69E /* View */,
@@ -212,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				9814ED192BBBA51F0030524B /* Preview Assets.xcassets */,
+				98723F272BC4928800872DA4 /* cafe.png */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -235,16 +279,106 @@
 			children = (
 				98723F012BC0D27E00872DA4 /* CafeManager.swift */,
 				98723F042BC0DD6200872DA4 /* InteractionManager.swift */,
+				98723F562BC4E0C000872DA4 /* MelbourneCafeManager.swift */,
+				98723F5A2BC4E99F00872DA4 /* melbourneMapinteraction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		98723F182BC3C66E00872DA4 /* CafeAssets */ = {
+		98723F2D2BC4C40B00872DA4 /* cafe-cinnamon */ = {
 			isa = PBXGroup;
 			children = (
-				98723F192BC3C82A00872DA4 /* coffeemarker.png */,
+				98723F2B2BC4C40B00872DA4 /* cinnamon1.jpeg */,
+				98723F2C2BC4C40B00872DA4 /* cinnamon2.jpeg */,
 			);
-			path = CafeAssets;
+			path = "cafe-cinnamon";
+			sourceTree = "<group>";
+		};
+		98723F302BC4C40B00872DA4 /* cafe-fresca */ = {
+			isa = PBXGroup;
+			children = (
+				98723F2E2BC4C40B00872DA4 /* cafefresca1.jpeg */,
+				98723F2F2BC4C40B00872DA4 /* cafefresca2.jpeg */,
+			);
+			path = "cafe-fresca";
+			sourceTree = "<group>";
+		};
+		98723F332BC4C40B00872DA4 /* cafe-gardens */ = {
+			isa = PBXGroup;
+			children = (
+				98723F312BC4C40B00872DA4 /* gardens1.jpeg */,
+				98723F322BC4C40B00872DA4 /* gardens2.jpeg */,
+			);
+			path = "cafe-gardens";
+			sourceTree = "<group>";
+		};
+		98723F362BC4C40B00872DA4 /* cafe-kirk  */ = {
+			isa = PBXGroup;
+			children = (
+				98723F342BC4C40B00872DA4 /* cafekirk1.jpeg */,
+				98723F352BC4C40B00872DA4 /* cafekirk2.jpeg */,
+			);
+			path = "cafe-kirk ";
+			sourceTree = "<group>";
+		};
+		98723F392BC4C40B00872DA4 /* cafe-lola */ = {
+			isa = PBXGroup;
+			children = (
+				98723F372BC4C40B00872DA4 /* lola1.jpeg */,
+				98723F382BC4C40B00872DA4 /* lola2.jpeg */,
+			);
+			path = "cafe-lola";
+			sourceTree = "<group>";
+		};
+		98723F3C2BC4C40B00872DA4 /* cafe-markyle */ = {
+			isa = PBXGroup;
+			children = (
+				98723F3A2BC4C40B00872DA4 /* markyle1.jpeg */,
+				98723F3B2BC4C40B00872DA4 /* markyle2.jpeg */,
+			);
+			path = "cafe-markyle";
+			sourceTree = "<group>";
+		};
+		98723F3F2BC4C40B00872DA4 /* cafe-river */ = {
+			isa = PBXGroup;
+			children = (
+				98723F3D2BC4C40B00872DA4 /* riverkitchen1.jpeg */,
+				98723F3E2BC4C40B00872DA4 /* riverkitchen2.jpeg */,
+			);
+			path = "cafe-river";
+			sourceTree = "<group>";
+		};
+		98723F422BC4C40B00872DA4 /* cafe-sugarbowl */ = {
+			isa = PBXGroup;
+			children = (
+				98723F402BC4C40B00872DA4 /* sugar1.jpeg */,
+				98723F412BC4C40B00872DA4 /* sugar2.jpeg */,
+			);
+			path = "cafe-sugarbowl";
+			sourceTree = "<group>";
+		};
+		98723F432BC4C40B00872DA4 /* Cafeimages */ = {
+			isa = PBXGroup;
+			children = (
+				98723F2D2BC4C40B00872DA4 /* cafe-cinnamon */,
+				98723F302BC4C40B00872DA4 /* cafe-fresca */,
+				98723F332BC4C40B00872DA4 /* cafe-gardens */,
+				98723F362BC4C40B00872DA4 /* cafe-kirk  */,
+				98723F392BC4C40B00872DA4 /* cafe-lola */,
+				98723F3C2BC4C40B00872DA4 /* cafe-markyle */,
+				98723F3F2BC4C40B00872DA4 /* cafe-river */,
+				98723F422BC4C40B00872DA4 /* cafe-sugarbowl */,
+			);
+			name = Cafeimages;
+			path = ../../Cafeimages;
+			sourceTree = "<group>";
+		};
+		98723F682BC533B700872DA4 /* assests */ = {
+			isa = PBXGroup;
+			children = (
+				98723F692BC533C000872DA4 /* Inter-Bold.ttf */,
+			);
+			path = assests;
 			sourceTree = "<group>";
 		};
 		98D3931A2BBBD21E0086F69E /* Frameworks */ = {
@@ -258,8 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
-				98723EFB2BC0C8E000872DA4 /* CafeCard.swift */,
-				98723EFD2BC0CA6C00872DA4 /* CafeCardView.swift */,
+				98723F642BC52D5700872DA4 /* CoffeeView.swift */,
+				98723F5E2BC4F30300872DA4 /* MelbourneView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,7 +403,9 @@
 			children = (
 				98D3932F2BBBDD330086F69E /* RouteViewController.swift */,
 				98723EFF2BC0CAE600872DA4 /* CafeViewController.swift */,
-				98723F082BC105C800872DA4 /* InteractionViewController.swift */,
+				98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */,
+				98723F542BC4E03600872DA4 /* MelbourneMapViewController.swift */,
+				98723F662BC52D9800872DA4 /* LandingViewController.swift */,
 			);
 			path = "Controller ";
 			sourceTree = "<group>";
@@ -413,13 +549,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98723F232BC3D45C00872DA4 /* info.plist in Resources */,
+				98723F442BC4C40B00872DA4 /* cinnamon1.jpeg in Resources */,
 				98723F222BC3D43100872DA4 /* Inter-Bold.ttf in Resources */,
 				9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */,
 				98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */,
 				9814ED172BBBA51F0030524B /* Assets.xcassets in Resources */,
+				98723F522BC4C40B00872DA4 /* sugar1.jpeg in Resources */,
 				98723EEA2BBD245600872DA4 /* cafe.png in Resources */,
+				98723F512BC4C40B00872DA4 /* riverkitchen2.jpeg in Resources */,
 				98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */,
+				98723F4C2BC4C40B00872DA4 /* lola1.jpeg in Resources */,
+				98723F4D2BC4C40B00872DA4 /* lola2.jpeg in Resources */,
+				98723F532BC4C40B00872DA4 /* sugar2.jpeg in Resources */,
+				98723F472BC4C40B00872DA4 /* cafefresca2.jpeg in Resources */,
+				98723F4F2BC4C40B00872DA4 /* markyle2.jpeg in Resources */,
+				98723F452BC4C40B00872DA4 /* cinnamon2.jpeg in Resources */,
+				98723F4A2BC4C40B00872DA4 /* cafekirk1.jpeg in Resources */,
+				98723F482BC4C40B00872DA4 /* gardens1.jpeg in Resources */,
+				98723F462BC4C40B00872DA4 /* cafefresca1.jpeg in Resources */,
+				98723F4E2BC4C40B00872DA4 /* markyle1.jpeg in Resources */,
+				98723F4B2BC4C40B00872DA4 /* cafekirk2.jpeg in Resources */,
+				98723F492BC4C40B00872DA4 /* gardens2.jpeg in Resources */,
+				98723F502BC4C40B00872DA4 /* riverkitchen1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,16 +596,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				98D3932E2BBBDB290086F69E /* AppDelegate.swift in Sources */,
+				98723F5F2BC4F30300872DA4 /* MelbourneView.swift in Sources */,
 				9814ED132BBBA51E0030524B /* ContentView.swift in Sources */,
 				98723F002BC0CAE600872DA4 /* CafeViewController.swift in Sources */,
 				98D3932C2BBBD8DA0086F69E /* RouteView.swift in Sources */,
 				98723F022BC0D27E00872DA4 /* CafeManager.swift in Sources */,
-				98723F092BC105C800872DA4 /* InteractionViewController.swift in Sources */,
+				98723F572BC4E0C000872DA4 /* MelbourneCafeManager.swift in Sources */,
 				98723F052BC0DD6200872DA4 /* InteractionManager.swift in Sources */,
 				98D393302BBBDD330086F69E /* RouteViewController.swift in Sources */,
-				98723EFE2BC0CA6C00872DA4 /* CafeCardView.swift in Sources */,
+				98723F652BC52D5700872DA4 /* CoffeeView.swift in Sources */,
+				98723F5D2BC4EDA500872DA4 /* MelCafeView.swift in Sources */,
+				98723F552BC4E03600872DA4 /* MelbourneMapViewController.swift in Sources */,
 				9814ED112BBBA51E0030524B /* CafeProjectApp.swift in Sources */,
-				98723EFC2BC0C8E000872DA4 /* CafeCard.swift in Sources */,
+				98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */,
+				98723F5B2BC4E99F00872DA4 /* melbourneMapinteraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +775,7 @@
 				DEVELOPMENT_TEAM = WRJXN2DGS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = CoffeeSnob/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = String;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -652,7 +807,7 @@
 				DEVELOPMENT_TEAM = WRJXN2DGS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = CoffeeSnob/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = String;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

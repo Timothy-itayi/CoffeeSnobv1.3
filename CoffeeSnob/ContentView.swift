@@ -4,6 +4,7 @@ struct ContentView: View {
     @State private var text: String = ""
     
     var body: some View {
+        
         NavigationView { // Embed ContentView in a NavigationView
             VStack (spacing: 20 ){
                 
@@ -15,43 +16,31 @@ struct ContentView: View {
                 
                 
                 // Title of the app
-                Text("Coffee Snob")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
+                Text("Welcome to CoffeeeSnob!")
+                    .font(.custom("Inter-Bold", size: 36))
                     .padding()
                 
                 
                 
-                NavigationLink(destination: RouteView())  {
+                NavigationLink(destination: CoffeeView())  {
                     // Handle submission of text here
                     
-                    Text("Start the Snobbery")
+                    Text("Lets Grab a Coffee!")
                     
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue) // Set button background color
-                        .foregroundColor(.white) // Set button text color
+                        .background(Color.black) // Set button background color
+                        .foregroundColor(.yellow) // Set button text color
                         .font(.headline) // Set button text font
                         .cornerRadius(10) // Add rounded corners
                         .shadow(color: Color.black.opacity(0.3), radius: 3, x: 0, y: 2) // Add shadow
                 }
                 .padding(.horizontal) // Add horizontal padding
-                
-                NavigationLink(destination: RouteView()){
-                    Text("Cafe Card")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue) // Set button background color
-                        .foregroundColor(.white) // Set button text color
-                        .font(.headline) // Set button text font
-                        .cornerRadius(10) // Add rounded corners
-                        .shadow(color: Color.black.opacity(0.3), radius: 3, x: 0, y: 2) // Add shadow
-                        .padding()
+             
                 }
                 .padding()
                 .navigationBarTitle("") // Hide the default navigation title
             }
         }
     }
-}
+
