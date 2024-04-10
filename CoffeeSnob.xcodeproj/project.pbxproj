@@ -46,7 +46,6 @@
 		98723F5D2BC4EDA500872DA4 /* MelCafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */; };
 		98723F5F2BC4F30300872DA4 /* MelbourneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5E2BC4F30300872DA4 /* MelbourneView.swift */; };
 		98723F652BC52D5700872DA4 /* CoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F642BC52D5700872DA4 /* CoffeeView.swift */; };
-		98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F662BC52D9800872DA4 /* LandingViewController.swift */; };
 		98723F6C2BC60D1900872DA4 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F6B2BC60D1900872DA4 /* SelectionView.swift */; };
 		98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */; };
 		98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */; };
@@ -145,7 +144,6 @@
 		98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelCafeView.swift; sourceTree = "<group>"; };
 		98723F5E2BC4F30300872DA4 /* MelbourneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelbourneView.swift; sourceTree = "<group>"; };
 		98723F642BC52D5700872DA4 /* CoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeView.swift; sourceTree = "<group>"; };
-		98723F662BC52D9800872DA4 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		98723F692BC533C000872DA4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		98723F6A2BC535C200872DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		98723F6B2BC60D1900872DA4 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
@@ -279,10 +277,8 @@
 		98723F032BC0D28900872DA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				98723F012BC0D27E00872DA4 /* CafeManager.swift */,
-				98723F042BC0DD6200872DA4 /* InteractionManager.swift */,
-				98723F562BC4E0C000872DA4 /* MelbourneCafeManager.swift */,
-				98723F5A2BC4E99F00872DA4 /* melbourneMapinteraction.swift */,
+				98723F702BC65C2900872DA4 /* New Zealand */,
+				98723F6F2BC65BFF00872DA4 /* Australia */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +379,58 @@
 			path = assests;
 			sourceTree = "<group>";
 		};
+		98723F6F2BC65BFF00872DA4 /* Australia */ = {
+			isa = PBXGroup;
+			children = (
+				98723F562BC4E0C000872DA4 /* MelbourneCafeManager.swift */,
+				98723F5A2BC4E99F00872DA4 /* melbourneMapinteraction.swift */,
+			);
+			path = Australia;
+			sourceTree = "<group>";
+		};
+		98723F702BC65C2900872DA4 /* New Zealand */ = {
+			isa = PBXGroup;
+			children = (
+				98723F012BC0D27E00872DA4 /* CafeManager.swift */,
+				98723F042BC0DD6200872DA4 /* InteractionManager.swift */,
+			);
+			path = "New Zealand";
+			sourceTree = "<group>";
+		};
+		98723F712BC65C4700872DA4 /* Australia */ = {
+			isa = PBXGroup;
+			children = (
+				98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */,
+				98723F542BC4E03600872DA4 /* MelbourneMapViewController.swift */,
+			);
+			path = Australia;
+			sourceTree = "<group>";
+		};
+		98723F722BC65C7600872DA4 /* New Zealand */ = {
+			isa = PBXGroup;
+			children = (
+				98D3932F2BBBDD330086F69E /* RouteViewController.swift */,
+				98723EFF2BC0CAE600872DA4 /* CafeViewController.swift */,
+			);
+			path = "New Zealand";
+			sourceTree = "<group>";
+		};
+		98723F732BC65C9300872DA4 /* Australia */ = {
+			isa = PBXGroup;
+			children = (
+				98723F5E2BC4F30300872DA4 /* MelbourneView.swift */,
+			);
+			path = Australia;
+			sourceTree = "<group>";
+		};
+		98723F742BC65C9B00872DA4 /* New Zealand  */ = {
+			isa = PBXGroup;
+			children = (
+				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
+			);
+			path = "New Zealand ";
+			sourceTree = "<group>";
+		};
 		98D3931A2BBBD21E0086F69E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,9 +441,9 @@
 		98D393312BBBDD830086F69E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
+				98723F742BC65C9B00872DA4 /* New Zealand  */,
+				98723F732BC65C9300872DA4 /* Australia */,
 				98723F642BC52D5700872DA4 /* CoffeeView.swift */,
-				98723F5E2BC4F30300872DA4 /* MelbourneView.swift */,
 				98723F6B2BC60D1900872DA4 /* SelectionView.swift */,
 			);
 			path = View;
@@ -404,11 +452,8 @@
 		98D393322BBCA2A70086F69E /* Controller  */ = {
 			isa = PBXGroup;
 			children = (
-				98D3932F2BBBDD330086F69E /* RouteViewController.swift */,
-				98723EFF2BC0CAE600872DA4 /* CafeViewController.swift */,
-				98723F5C2BC4EDA500872DA4 /* MelCafeView.swift */,
-				98723F542BC4E03600872DA4 /* MelbourneMapViewController.swift */,
-				98723F662BC52D9800872DA4 /* LandingViewController.swift */,
+				98723F722BC65C7600872DA4 /* New Zealand */,
+				98723F712BC65C4700872DA4 /* Australia */,
 			);
 			path = "Controller ";
 			sourceTree = "<group>";
@@ -611,7 +656,6 @@
 				98723F5D2BC4EDA500872DA4 /* MelCafeView.swift in Sources */,
 				98723F552BC4E03600872DA4 /* MelbourneMapViewController.swift in Sources */,
 				9814ED112BBBA51E0030524B /* CafeProjectApp.swift in Sources */,
-				98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */,
 				98723F5B2BC4E99F00872DA4 /* melbourneMapinteraction.swift in Sources */,
 				98723F6C2BC60D1900872DA4 /* SelectionView.swift in Sources */,
 			);
