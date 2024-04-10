@@ -134,15 +134,14 @@ class InteractionManager {
             let distance = tappedLocation.distance(from: cafeLocation)
          
             if distance <= tolerance {
-                // Instantiate and present the cafe card view controller
                 let cafeCardViewController = CafeViewController(cafe: cafe, cafeManager: cafeManager)
-                
-                // Get the current window
-                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                   let viewController = windowScene.windows.first?.rootViewController {
-                    viewController.present(cafeCardViewController, animated: true, completion: nil)
-                }
-                
+                        
+                        // Get the current window
+                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let viewController = windowScene.windows.first?.rootViewController {
+                            viewController.present(cafeCardViewController, animated: true, completion: nil)
+                        }
+                        
                 // Print the name of the tapped cafe
                 print("Tapped on cafe: \(cafe.name)")
                 

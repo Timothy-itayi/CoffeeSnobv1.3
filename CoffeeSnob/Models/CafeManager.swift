@@ -40,9 +40,9 @@ class CafeManager {
         let openingTime: Date
         let closingTime: Date
         let description: String
-     
+        let image: UIImage
         
-        init(id: String, name: String, address: String, rating: Int, coordinate: LocationCoordinate, openingTime: Date, closingTime: Date, description: String) {
+        init(id: String, name: String, address: String, rating: Int, coordinate: LocationCoordinate, openingTime: Date, closingTime: Date, description: String, image: UIImage) {
             self.id = id
             self.name = name
             self.address = address
@@ -51,7 +51,7 @@ class CafeManager {
             self.openingTime = openingTime
             self.closingTime = closingTime
             self.description = description
-          
+            self.image = image
         }
         
         func isOpen() -> Bool {
@@ -60,6 +60,7 @@ class CafeManager {
               return  now >= openingTime && now <= closingTime
           }
       }
+   
         private var cafes: [Cafe] = []
         private init() {}
     func setupCafes() {
@@ -134,16 +135,29 @@ class CafeManager {
             (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Saturday
             (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Sunday
         ]
+        
+      guard let kirkImage = UIImage(named: "cafekirk1"),
+        let frescaImage = UIImage(named: "cafefresca1"),
+        let gardenImage = UIImage(named: "gardens1"),
+        let lolaImage = UIImage(named: "lola2"),
+        let markyleImage = UIImage(named: "markyle1"),
+        let sugarBowlImage = UIImage(named: "sugar1"),
+        let riverKitchenImage = UIImage(named: "riverkitchen1")
+       else {
+          print("One or more images not found")
+          return
+      }
+        
 
         // Create cafe instances with the defined opening and closing times
         cafes = [
-            Cafe(id: "0", name: "The Kirk Cafe", address: "6 Te Aroha Street, Hamilton East, Hamilton 3216", rating: 4, coordinate: LocationCoordinate(latitude: -37.7835991, longitude: 175.28886647), openingTime: kirkHours[0].openingTime, closingTime: kirkHours[0].closingTime, description: "Wonderful place"),
-            Cafe(id: "1", name: "Cafe Fresca", address: "78 Alison Street, Hamilton Lake, Hamilton 3210", rating: 4, coordinate: LocationCoordinate(latitude: -37.8067891, longitude: 175.2708707), openingTime: frescaHours[0].openingTime, closingTime: frescaHours[0].closingTime, description: "Example 5"),
-            Cafe(id: "2", name: "Hamilton Gardens Cafe", address: "Hamilton Gardens, Hamilton East, Hamilton 3216", rating: 3, coordinate: LocationCoordinate(latitude: -37.7961, longitude: 175.3088), openingTime: gardensHours[0].openingTime, closingTime: gardensHours[0].closingTime, description: "Description"),
-            Cafe(id: "3", name: "Markyle's Coffee and Food Establishment", address: "38B Hood Street, Hamilton Central, Hamilton 3204", rating: 4, coordinate: LocationCoordinate(latitude: -37.7906427, longitude: 175.2848956), openingTime: markylesHours[0].openingTime, closingTime: markylesHours[0].closingTime, description: "Menu"),
-            Cafe(id: "4", name: "Lola Breakfast Bar & Cafe", address: "2 Whatawhata Road, Dinsdale, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.7946979, longitude: 175.2471037), openingTime: lolaHours[0].openingTime, closingTime: lolaHours[0].closingTime, description: "Polar"),
-            Cafe(id: "5", name: "The Sugar Bowl Cafe", address: "150 Maeroa Road, Maeroa, Hamilton 3200", rating: 4, coordinate: LocationCoordinate(latitude: -37.776354, longitude: 175.2586546), openingTime: sugarBowlHours[0].openingTime, closingTime: sugarBowlHours[0].closingTime, description: "Example 56"),
-            Cafe(id: "6", name: "The River Kitchen", address: "217 Victoria Street, Hamilton Central, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.788618, longitude: 175.2840732), openingTime: riverKitchenHours[0].openingTime, closingTime: riverKitchenHours[0].closingTime, description: "Example 4"),
+            Cafe(id: "0", name: "The Kirk Cafe", address: "6 Te Aroha Street, Hamilton East, Hamilton 3216", rating: 4, coordinate: LocationCoordinate(latitude: -37.7835991, longitude: 175.28886647), openingTime: kirkHours[0].openingTime, closingTime: kirkHours[0].closingTime, description: "Wonderful place", image: kirkImage),
+            Cafe(id: "1", name: "Cafe Fresca", address: "78 Alison Street, Hamilton Lake, Hamilton 3210", rating: 4, coordinate: LocationCoordinate(latitude: -37.8067891, longitude: 175.2708707), openingTime: frescaHours[0].openingTime, closingTime: frescaHours[0].closingTime, description: "Example 5", image: frescaImage),
+            Cafe(id: "2", name: "Hamilton Gardens Cafe", address: "Hamilton Gardens, Hamilton East, Hamilton 3216", rating: 3, coordinate: LocationCoordinate(latitude: -37.7961, longitude: 175.3088), openingTime: gardensHours[0].openingTime, closingTime: gardensHours[0].closingTime, description: "Description", image: gardenImage),
+            Cafe(id: "3", name: "Markyle's Coffee and Food Establishment", address: "38B Hood Street, Hamilton Central, Hamilton 3204", rating: 4, coordinate: LocationCoordinate(latitude: -37.7906427, longitude: 175.2848956), openingTime: markylesHours[0].openingTime, closingTime: markylesHours[0].closingTime, description: "Menu", image: markyleImage),
+            Cafe(id: "4", name: "Lola Breakfast Bar & Cafe", address: "2 Whatawhata Road, Dinsdale, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.7946979, longitude: 175.2471037), openingTime: lolaHours[0].openingTime, closingTime: lolaHours[0].closingTime, description: "Polar", image: lolaImage),
+            Cafe(id: "5", name: "The Sugar Bowl Cafe", address: "150 Maeroa Road, Maeroa, Hamilton 3200", rating: 4, coordinate: LocationCoordinate(latitude: -37.776354, longitude: 175.2586546), openingTime: sugarBowlHours[0].openingTime, closingTime: sugarBowlHours[0].closingTime, description: "Example 56", image: sugarBowlImage),
+            Cafe(id: "6", name: "The River Kitchen", address: "217 Victoria Street, Hamilton Central, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.788618, longitude: 175.2840732), openingTime: riverKitchenHours[0].openingTime, closingTime: riverKitchenHours[0].closingTime, description: "Example 4", image: riverKitchenImage),
         ]
     }
 
