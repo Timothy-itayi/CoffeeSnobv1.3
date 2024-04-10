@@ -10,7 +10,8 @@ class CafeViewController: UIViewController {
 
     // UI elements
     let nameLabel = UILabel()
-    let cafeImageView = UIImageView()
+    let scrollView = UIScrollView()
+    var imageViews = [UIImageView]()
     let addressLabel = UILabel()
     let hoursLabel = UILabel()
     let descriptionLabel = UILabel()
@@ -45,9 +46,9 @@ class CafeViewController: UIViewController {
         nameLabel.font = UIFont.systemFont(ofSize: 34)
         view.addSubview(nameLabel)
 
-        // Add cafe image view
-        cafeImageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(cafeImageView)
+        // Add scrollView
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
 
         // Add hours label
         hoursLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -68,24 +69,26 @@ class CafeViewController: UIViewController {
             nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
-            cafeImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-            cafeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            cafeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            cafeImageView.heightAnchor.constraint(equalToConstant: 200),
-
-            addressLabel.topAnchor.constraint(equalTo: cafeImageView.bottomAnchor, constant: 10),
+            
+            addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             addressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             addressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
-            hoursLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 10),
-            hoursLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            hoursLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
-            descriptionLabel.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 10),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 10),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
+
+            hoursLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
+            hoursLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            hoursLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            scrollView.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 10),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: 600),
+
+    
       
         ])
     }
@@ -95,9 +98,41 @@ class CafeViewController: UIViewController {
         nameLabel.text = cafe.name
         descriptionLabel.text = cafe.description
         addressLabel.text = cafe.address
+        var previousImageView: UIImageView?
+        // Add images to scrollView
+              for image in cafe.images {
+                  let imageView = UIImageView(image: image)
+                  imageView.contentMode = .scaleAspectFill
+                  imageView.clipsToBounds = true
+                  imageView.translatesAutoresizingMaskIntoConstraints = false
+                  scrollView.addSubview(imageView)
+                  imageViews.append(imageView)
+                  
+                  // Set constraints relative to the previous image view
+                        NSLayoutConstraint.activate([
+                            imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+                            imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+                            imageView.heightAnchor.constraint(equalToConstant: 400)
+                        ])
+                        
+                        if let previous = previousImageView {
+                            // If there's a previous image view, constrain the top of the current image view to the bottom of the previous one
+                            NSLayoutConstraint.activate([
+                                imageView.topAnchor.constraint(equalTo: previous.bottomAnchor),
+                            ])
+                        } else {
+                            // If there's no previous image view, this is the first one, so constrain its top to the top of the scrollView
+                            NSLayoutConstraint.activate([
+                                imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                            ])
+                        }
+                        
+                        previousImageView = imageView
+                    }
 
-        // Set cafe image
-        cafeImageView.image = cafe.image
+                    scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: CGFloat(cafe.images.count) * 400)
+        
+        
 
         // Determine status and time text
         let statusText: String
