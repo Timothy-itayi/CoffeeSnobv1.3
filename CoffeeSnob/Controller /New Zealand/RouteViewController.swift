@@ -2,8 +2,6 @@ import CoreLocation
 import TomTomSDKMapDisplay
 import UIKit
 import TomTomSDKCommon
-import TomTomSDKSearchOnline
-import TomTomSDKSearch
 import SwiftUI
 import TomTomSDKNavigation
 import TomTomSDKLocationProvider
@@ -22,33 +20,28 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
     let interactionManager = InteractionManager.shared
     let hamilton = CLLocationCoordinate2D(latitude: -37.750951, longitude: 175.208783)
     var onMapReadyCallback: ((TomTomMap) -> ())?
-
+    
     
     func mapView(_ mapView: TomTomSDKMapDisplay.MapView, onMapReady map: TomTomSDKMapDisplay.TomTomMap) {
         
         print("MapViewDelegate - onMapReady")
-     
+        
         // Print a message indicating that the map is ready
         print("TomTomMap: The map is ready for interaction.")
-   
+        
         self.map = map
-        
-        
-        // Call the onMapReadyCallback closure if it's set
-               if let callback = onMapReadyCallback {
-                   callback(map)
-               }
-        
-        addMarkers()
-      // Check if the
+        print("Calling addMarkers function...")
+        addMarkers(map: map)
+
+        // Check if the
         let isCurrentLocationButtonVisible = mapView.isCurrentLocationButtonVisible
         print("Is current location button visible? \(isCurrentLocationButtonVisible)")
         
         
         // Add tap gesture recognizer directly to the mapView
-         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
-         mapView.addGestureRecognizer(tapGestureRecognizer)
-     }
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
+    }
     @objc func handleMapTap(_ gestureRecognizer: UITapGestureRecognizer) {
         guard gestureRecognizer.state == .ended else {
             return // Ignore other states
@@ -80,22 +73,22 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
         }
         
         // Select the closest marker using its annotation
-        mapView?.map.isMarkersFadingEnabled = true 
+        mapView?.map.isMarkersFadingEnabled = true
         mapView?.map.select(annotation: marker)
         
         // Handle the tap using InteractionManager
         interactionManager.handleTappedOnLocationMarker(coordinate: marker.annotationCoordinate)
     }
-
-
-
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cafeManager.setupCafes()
         initializeMapView()
-        addMarkers()
+        
         map?.zoomToMarkers(marginPx: 1000)
         mapView?.delegate = self
         mapView?.isUserInteractionEnabled = true
@@ -103,13 +96,13 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
         
         mapView?.isLogoVisible = false
         
-   
-   
+        
+        
     }
     
-  
-
-
+    
+    
+    
     private func initializeMapView() {
         
         let styleContainer = StyleContainer.defaultStyle
@@ -132,39 +125,58 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
                     mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
                 ])
                 
-               
+                
                 mapView.currentLocationButtonVisibilityPolicy = .visible
                 mapView.compassButtonVisibilityPolicy = .hidden
                 mapView.isLogoVisible = false
+                
+                
+                print("MapView instance: \(mapView)")
+                
+                self.map = mapView.map
+                
+                print("Map instance after setting: \(String(describing: self.map))")
+                // Add markers if map instance is not nil
+                if let map = self.map {
+                    self.addMarkers(map:map)
+                }
+            } else {
+                // Print error if mapView is nil
+                print("MapView is nil.")
             }
         }
         
     }
     
-    private func addMarkers() {
-        guard let map = map else { return }
+    private func addMarkers(map: TomTomMap) {
+        print("Adding markers...")
         
         let cafes = cafeManager.getCafes()
+        
+        if cafes.isEmpty {
+               print("No cafes found.")
+               return
+           }
         // Loop through each cafe of cafes, creating a MarkerOptions object with the cafe's coordinates
-        for cafe in  cafes {
+        for cafe in cafes {
+            print("Cafe Coordinate: \(cafe.coordinate)")
             var markerOptions = MarkerOptions(coordinate: cafe.coordinate.toCLLocationCoordinate2D())
-            
-            markerOptions.scalingFactor = 0.5 //adjust the size of the markers
+            markerOptions.scalingFactor = 0.5 // Adjust the size of the markers
             
             do {
                 let marker = try map.addMarker(options: markerOptions)
                 marker.isVisible = true
                 marker.isSelectable = true
+                print("Marker added at \(cafe.coordinate), visible: \(marker.isVisible)")
             } catch {
-                print("Failed to add marker: \(error)")
+                print("Failed to add marker for cafe \(cafe.annotationID): \(error)")
             }
         }
     }
-    
-    
-    
-    
+
 }
+    
+
     
     
     
