@@ -15,7 +15,7 @@ struct SelectionView: View {
                 .padding()
             
             Text("Select a city!")
-                .font(.custom("Inter-Bold", size: 24))
+                .font(.custom("Inter-Bold", size: 36))
                 .padding()
             
             NavigationLink(destination: MelbourneMapView()) {
