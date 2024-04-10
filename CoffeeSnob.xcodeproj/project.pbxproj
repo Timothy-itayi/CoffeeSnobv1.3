@@ -47,6 +47,7 @@
 		98723F5F2BC4F30300872DA4 /* MelbourneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F5E2BC4F30300872DA4 /* MelbourneView.swift */; };
 		98723F652BC52D5700872DA4 /* CoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F642BC52D5700872DA4 /* CoffeeView.swift */; };
 		98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F662BC52D9800872DA4 /* LandingViewController.swift */; };
+		98723F6C2BC60D1900872DA4 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98723F6B2BC60D1900872DA4 /* SelectionView.swift */; };
 		98D393042BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393032BBBCCDA0086F69E /* TomTomSDKBindingFrameworkHTTPInternal */; };
 		98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393052BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal */; };
 		98D393082BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal in Frameworks */ = {isa = PBXBuildFile; productRef = 98D393072BBBCCDA0086F69E /* TomTomSDKBindingMapDisplayEngineInternal */; };
@@ -147,6 +148,7 @@
 		98723F662BC52D9800872DA4 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		98723F692BC533C000872DA4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		98723F6A2BC535C200872DA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		98723F6B2BC60D1900872DA4 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		98D3932A2BBBD5740086F69E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		98D3932B2BBBD8DA0086F69E /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		98D3932D2BBBDB290086F69E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				98D3932B2BBBD8DA0086F69E /* RouteView.swift */,
 				98723F642BC52D5700872DA4 /* CoffeeView.swift */,
 				98723F5E2BC4F30300872DA4 /* MelbourneView.swift */,
+				98723F6B2BC60D1900872DA4 /* SelectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				9814ED112BBBA51E0030524B /* CafeProjectApp.swift in Sources */,
 				98723F672BC52D9800872DA4 /* LandingViewController.swift in Sources */,
 				98723F5B2BC4E99F00872DA4 /* melbourneMapinteraction.swift in Sources */,
+				98723F6C2BC60D1900872DA4 /* SelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
