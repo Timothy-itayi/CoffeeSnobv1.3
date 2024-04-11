@@ -122,36 +122,44 @@ class MelCafeViewController: UIViewController {
         }
         nameLabel.textAlignment = .left
         
-        
         // Rating Label //
-        // Rating Label //
-        let ratingStar = starRatingString(rating: cafe.rating)
+        let ratingStar = starRatingString(rating: Double(cafe.rating))
         let ratingCustomColor = UIColor(red: 49.0/255.0, green: 95.0/255.0, blue: 114.0/255.0, alpha: 1.0)
         let ratingTextCustomColor = UIColor(red: 33.0/255.0, green: 31.0/255.0, blue: 30.0/255.0, alpha: 1.0)
-        // Set the color for "Rating: "
-//        let ratingTextLabel = "Rating: "
-        let _: [NSAttributedString.Key: Any] = [
-            .foregroundColor: ratingTextCustomColor, // Your desired color for the "Rating: " text
-            .font: UIFont(name: "Inter-Regular", size: 20) ?? UIFont.systemFont(ofSize: 20) // Your desired font
-        ]
-//        let ratingTextAttributedString = NSAttributedString(string: ratingTextLabel, attributes: ratingTextAttributes)
-
-        // Set the color for the rating stars
-        let ratingStarAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: ratingCustomColor, //  color for the rating stars
-            .font: UIFont(name: "", size: 24) ?? UIFont.systemFont(ofSize: 24) // Your desired
-       
-        ]
-        let ratingStarAttributedString = NSAttributedString(string: ratingStar, attributes: ratingStarAttributes)
-
-        // Combine the two attributed strings
-        let combinedAttributedString = NSMutableAttributedString()
-//        combinedAttributedString.append(ratingTextAttributedString)
-        combinedAttributedString.append(ratingStarAttributedString)
-
-        // Set the attributed text to the label
-        ratingLabel.attributedText = combinedAttributedString
-
+        
+        let ratingStarString = starRatingString(rating: Double(cafe.rating)) // Generate the star rating string
+        let ratingStarAttributedString = NSAttributedString(string: ratingStarString, attributes: [.foregroundColor: ratingCustomColor]) // Create an attributed string with the rating stars and the specified color
+        ratingLabel.attributedText = ratingStarAttributedString // Set the attributed text to the label
+        
+        func starRatingString(rating: Double) -> String {
+            let fullStar = "\u{2605}"
+            let halfStar = "\u{00BD}" // Unicode for half star
+            let emptyStar = "\u{2606}"
+            
+            var ratingString = ""
+            
+            // Calculate the number of full stars
+            let fullStars = Int(rating)
+            
+            // Append full stars
+            for _ in 0..<fullStars {
+                ratingString.append(fullStar)
+            }
+            
+            // Check if there's a half star
+            let decimalPart = rating - Double(fullStars)
+            if decimalPart >= 0.25 {
+                ratingString.append(halfStar)
+            }
+            
+            // Append empty stars to fill up to 5 stars
+            let remainingStars = 5 - fullStars - (ratingString.count - fullStars)
+            for _ in 0..<remainingStars {
+                ratingString.append(emptyStar)
+            }
+            
+            return ratingString
+        }
         
         // Description Label //
         descriptionLabel.text = cafe.description
@@ -160,7 +168,7 @@ class MelCafeViewController: UIViewController {
         descriptionLabel.textColor = descriptionTextColor
         if let descriptionLabelFont = descriptionLabelFont{
             descriptionLabel.font = descriptionLabelFont
-         
+            
         }
         descriptionLabel.textAlignment = .left
         
@@ -176,10 +184,10 @@ class MelCafeViewController: UIViewController {
         }
         addressLabel.textAlignment = .left
         
-   
+        
         // Add images to scrollView
         var previousImageView: UIImageView?
-
+        
         for image in cafe.images {
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFill
@@ -216,20 +224,20 @@ class MelCafeViewController: UIViewController {
             
             previousImageView = imageView
         }
-
+        
         // Activate the constraints
         view.layoutIfNeeded()
-
+        
         
         // Get the current weekday
         let weekday = Calendar.current.component(.weekday, from: Date())
-
+        
         // Determine status and time text
         let openStatusText: String
         let closedStatusText: String
         let openingTimeText: String
         let closingTimeText: String
-
+        
         if cafe.isOpen() {
             openStatusText = "Open"
             closedStatusText = ""
@@ -246,10 +254,10 @@ class MelCafeViewController: UIViewController {
             closingTimeText = ""
             // Set label text color
             let closedCustomColor = UIColor(red: 173.0/255.0, green: 0.0, blue: 10.0/255.0, alpha: 1.0)
-
+            
             hoursLabel.textColor = closedCustomColor
         }
-
+        
         // Construct label text based on cafe status
         var labelText: String
         let spacing = "  "
@@ -258,22 +266,22 @@ class MelCafeViewController: UIViewController {
         } else {
             labelText = "\(closedStatusText)\(spacing) \(openingTimeText) \(openStatusText) \(closingTimeText) "
         }
-
+        
         // Set label text
         hoursLabel.text = labelText
-     
+        
         // Set text colors for opening and closing time texts
         let openingTimeRange = (hoursLabel.text! as NSString).range(of: openingTimeText)
         let closingTimeRange = (hoursLabel.text! as NSString).range(of: closingTimeText)
-
+        
         let attributedText = NSMutableAttributedString(string: hoursLabel.text!)
         let customColor = UIColor(red: 110.0/255.0, green: 107.0/255.0, blue: 106.0/255.0, alpha: 1.0)
-
+        
         attributedText.addAttribute(.foregroundColor, value: customColor, range: openingTimeRange)
         attributedText.addAttribute(.foregroundColor, value: customColor, range: closingTimeRange)
-
+        
         hoursLabel.attributedText = attributedText
-
+        
         
         // Helper method to format closing time
         func closingTimeFormatted(_ closingTime: Date) -> String {
@@ -289,21 +297,7 @@ class MelCafeViewController: UIViewController {
             return dateFormatter.string(from: openingTime)
         }
         
-        func starRatingString(rating: Int) -> String {
-            let fullStar = "\u{2605}"
-            let emptyStar = "\u{2606}"
-            var ratingString = ""
-            
-            for _ in 0..<rating {
-                ratingString.append(fullStar)
-            }
-            
-            for _ in rating..<5 {
-                ratingString.append(emptyStar)
-                
-            }
-            return ratingString
-        }
+   
     }
     
 }

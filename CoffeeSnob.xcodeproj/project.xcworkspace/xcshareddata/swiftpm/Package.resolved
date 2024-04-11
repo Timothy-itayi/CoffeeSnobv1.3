@@ -1,6 +1,15 @@
 {
-  "originHash" : "fccc9a5f943aa38015e5e623ae4692aa24c06ef676d970247cc099b373c90de4",
+  "originHash" : "69ce5287614ea37a0a00a9380274b5fd2a60fe558e6f683907b979f12f62f5b7",
   "pins" : [
+    {
+      "identity" : "cosmos",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/Cosmos.git",
+      "state" : {
+        "revision" : "40ba10aaf175bf50abefd0e518bd3b40862af3b1",
+        "version" : "25.0.1"
+      }
+    },
     {
       "identity" : "tomtom-sdk-spm-core",
       "kind" : "remoteSourceControl",

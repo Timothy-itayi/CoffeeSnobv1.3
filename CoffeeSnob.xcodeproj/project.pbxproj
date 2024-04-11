@@ -18,6 +18,7 @@
 		984D66142BC747B300BBFF6F /* SlingBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D660C2BC747B300BBFF6F /* SlingBold.ttf */; };
 		984D66152BC747B300BBFF6F /* SlingLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D660D2BC747B300BBFF6F /* SlingLight.ttf */; };
 		984D66192BC74D0800BBFF6F /* Sling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D66182BC74D0800BBFF6F /* Sling.ttf */; };
+		984D661D2BC7DE2000BBFF6F /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 984D661C2BC7DE2000BBFF6F /* Cosmos */; };
 		98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE72BBD1AF600872DA4 /* coffeemarker.png */; };
 		98723EEA2BBD245600872DA4 /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE92BBD245600872DA4 /* cafe.png */; };
 		98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EED2BBE0B0100872DA4 /* markerBalloon.png */; };
@@ -198,6 +199,7 @@
 				98D3930A2BBBCCDA0086F69E /* TomTomSDKBindingTrafficTileGeneratorInternal in Frameworks */,
 				98D3934A2BBCC5E80086F69E /* TomTomSDKRoutingVisualization in Frameworks */,
 				98D3933E2BBCA3800086F69E /* TomTomSDKSearch in Frameworks */,
+				984D661D2BC7DE2000BBFF6F /* Cosmos in Frameworks */,
 				98D3931E2BBBD2260086F69E /* TomTomSDKReverseGeocoder in Frameworks */,
 				98D393062BBBCCDA0086F69E /* TomTomSDKBindingFrameworkLoggingInternal in Frameworks */,
 				98723F112BC39C0900872DA4 /* TomTomSDKLocationProvider in Frameworks */,
@@ -536,6 +538,7 @@
 				98723F102BC39C0900872DA4 /* TomTomSDKLocationProvider */,
 				98723F122BC39C1400872DA4 /* TomTomSDKLocationTracesRecorder */,
 				98723F142BC39C2000872DA4 /* TomTomSDKUnifiedLocationDecoder */,
+				984D661C2BC7DE2000BBFF6F /* Cosmos */,
 			);
 			productName = "Cafe-Project";
 			productReference = 9814ED0D2BBBA51E0030524B /* CoffeeSnob.app */;
@@ -612,6 +615,7 @@
 			packageReferences = (
 				98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */,
 				98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */,
+				984D661B2BC7DE2000BBFF6F /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 9814ED0E2BBBA51E0030524B /* Products */;
 			projectDirPath = "";
@@ -1033,6 +1037,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		984D661B2BC7DE2000BBFF6F /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 25.0.1;
+			};
+		};
 		98D393022BBBCCDA0086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-core" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tomtom-international/tomtom-sdk-spm-core";
@@ -1052,6 +1064,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		984D661C2BC7DE2000BBFF6F /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 984D661B2BC7DE2000BBFF6F /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
 		98723F062BC1023200872DA4 /* TomTomSDKNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 98D3930D2BBBD0D40086F69E /* XCRemoteSwiftPackageReference "tomtom-sdk-spm-navigation" */;
