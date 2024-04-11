@@ -5,6 +5,8 @@ import TomTomSDKNavigation
 import TomTomSDKNavigationVisualization
 import UniformTypeIdentifiers
 import UIKit
+
+
 class CafeManager {
     static let shared = CafeManager()
     
@@ -35,105 +37,123 @@ class CafeManager {
         let id: String
         let name: String
         let address: String
-        let rating: Int
+        let rating: Double
         let coordinate: LocationCoordinate
-        let openingTime: Date
-        let closingTime: Date
+        let openingHours: [(Date, Date)]
         let description: String
         let images:[UIImage]
         
-        init(id: String, name: String, address: String, rating: Int, coordinate: LocationCoordinate, openingTime: Date, closingTime: Date, description: String, images: [UIImage]) {
+        init(id: String, name: String, address: String, rating: Double, coordinate: LocationCoordinate, openingHours: [(Date, Date)], description: String, images: [UIImage]) {
             self.id = id
             self.name = name
             self.address = address
             self.rating = rating
             self.coordinate = coordinate
-            self.openingTime = openingTime
-            self.closingTime = closingTime
+            self.openingHours = openingHours
             self.description = description
             self.images = images
         }
         
+        
         func isOpen() -> Bool {
-              let now = Date()
-              // Check if the current time falls within any of the cafe's operating hours
-              return  now >= openingTime && now <= closingTime
-          }
+            let now = Date()
+            let weekday = Calendar.current.component(.weekday, from: now)
+            
+            // Adjust for zero-based array index
+            guard weekday - 1 < openingHours.count else {
+                return false
+            }
+            
+            let currentDayOpeningHours = openingHours[weekday - 1]
+            
+            let openingTime = currentDayOpeningHours.0
+            let closingTime = currentDayOpeningHours.1
+            
+            // Check if the cafe is closed for the entire day
+            if openingTime == closingTime {
+                return false
+            }
+         
+            
+            let adjustedClosingTime = Calendar.current.date(byAdding: .minute, value: -1, to: closingTime)!
+            return now >= openingTime && now <= adjustedClosingTime
+        }
+
       }
    
         private var cafes: [Cafe] = []
         private init() {}
     func setupCafes() {
         // Define the opening and closing times for each cafe
-        let frescaHours: [(openingTime: Date, closingTime: Date)] = [
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 16, minute: 0)), // Monday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 16, minute: 0)), // Tuesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 16, minute: 0)), // Wednesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 16, minute: 0)), // Thursday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 16, minute: 0)), // Friday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 16, minute: 0)), // Saturday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 16, minute: 0)), // Sunday
+        let frescaHours: [[( Date, Date)]] = [
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 16, minute: 0))], // Monday
+            [(createDate(hour: 7, minute: 0), createDate(hour: 16, minute: 0))], // Tuesday
+            [(createDate(hour: 7, minute: 0), createDate(hour: 16, minute: 0))], // Wednesday
+            [(createDate(hour: 7, minute: 0), createDate(hour: 16, minute: 0))], // Thursday
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 16, minute: 0))], // Friday
+            [(createDate(hour: 8, minute: 0), createDate(hour: 16, minute: 0))], // Saturday
+            [( createDate(hour: 8, minute: 0), createDate(hour: 16, minute: 0))], // Sunday
         ]
         
-        let kirkHours: [(openingTime: Date, closingTime: Date)] = [
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Monday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Tuesday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Wednesday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Thursday
-            (openingTime: createDate(hour: 8, minute: 30), closingTime: createDate(hour: 14, minute: 30)), // Friday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Saturday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Sunday
+        let kirkHours: [[( Date, Date)]] = [
+            [(createDate(hour: 8, minute: 0),  createDate(hour: 14, minute: 30))], // Monday
+            [( createDate(hour: 8, minute: 0),  createDate(hour: 14, minute: 30))], // Tuesday
+            [(createDate(hour: 8, minute: 0), createDate(hour: 14, minute: 30))], // Wednesday
+            [( createDate(hour: 8, minute: 0),  createDate(hour: 14, minute: 30))], // Thursday
+            [(createDate(hour: 8, minute: 30),  createDate(hour: 14, minute: 30))], // Friday
+            [( createDate(hour: 9, minute: 0),  createDate(hour: 14, minute: 30))], // Saturday
+            [(createDate(hour: 9, minute: 0),  createDate(hour: 14, minute: 30))], // Sunday
         ]
         
-        let gardensHours: [(openingTime: Date, closingTime: Date)] = [
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 17, minute: 0)), // Monday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 17, minute: 0)), // Tuesday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 17, minute: 0)), // Wednesday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 17, minute: 0)), // Thursday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 17, minute: 0)), // Friday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 17, minute: 0)), // Saturday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 17, minute: 0)), // Sunday
+        let gardensHours:[[( Date, Date)]] = [
+            [( createDate(hour: 9, minute: 0),  createDate(hour: 17, minute: 0))], // Monday
+            [( createDate(hour: 9, minute: 0),  createDate(hour: 17, minute: 0))], // Tuesday
+            [( createDate(hour: 9, minute: 0),  createDate(hour: 17, minute: 0))], // Wednesday
+            [( createDate(hour: 9, minute: 0), createDate(hour: 17, minute: 0))], // Thursday
+            [( createDate(hour: 9, minute: 0),  createDate(hour: 17, minute: 0))], // Friday
+            [( createDate(hour: 9, minute: 0),createDate(hour: 17, minute: 0))], // Saturday
+            [( createDate(hour: 9, minute: 0), createDate(hour: 17, minute: 0))], // Sunday
         ]
 
-        let markylesHours: [(openingTime: Date, closingTime: Date)] = [
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Monday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Tuesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Wednesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Thursday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 13, minute: 30)), // Friday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 13, minute: 30)), // Saturday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Sunday
+        let markylesHours: [[( Date, Date)]] = [
+            [( createDate(hour: 7, minute: 0), createDate(hour: 14, minute: 0))], // Monday
+            [( createDate(hour: 7, minute: 0), createDate(hour: 14, minute: 0))], // Tuesday
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 14, minute: 0))], // Wednesday
+            [( createDate(hour: 7, minute: 0), createDate(hour: 14, minute: 0))], // Thursday
+            [( createDate(hour: 8, minute: 0),createDate(hour: 13, minute: 30))], // Friday
+            [( createDate(hour: 8, minute: 0),createDate(hour: 13, minute: 30))], // Saturday
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 14, minute: 0))], // Sunday
         ]
         
-        let lolaHours: [(openingTime: Date, closingTime: Date)] = [
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Monday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Tuesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Wednesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Thursday
+        let lolaHours:[ [( Date, Date)]] = [
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 14, minute: 30))], // Monday
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 14, minute: 30))], // Tuesday
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 14, minute: 30))], // Wednesday
+            [( createDate(hour: 7, minute: 0), createDate(hour: 14, minute: 30))], // Thursday
             // Saturday and Sunday are closed for Lola
-            (openingTime: createDate(hour: 0, minute: 0), closingTime: createDate(hour: 0, minute: 0)), // Saturday
-            (openingTime: createDate(hour: 0, minute: 0), closingTime: createDate(hour: 0, minute: 0)), // Sunday
+            [( createDate(hour: 0, minute: 0),  createDate(hour: 0, minute: 0))], // Saturday
+            [( createDate(hour: 0, minute: 0),  createDate(hour: 0, minute: 0))], // Sunday
         ]
         
-        let sugarBowlHours: [(openingTime: Date, closingTime: Date)] = [
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Monday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Tuesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Wednesday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Thursday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 15, minute: 0)), // Friday
-            (openingTime: createDate(hour: 8, minute: 0), closingTime: createDate(hour: 15, minute: 0)), // Saturday
-            (openingTime: createDate(hour: 7, minute: 0), closingTime: createDate(hour: 14, minute: 30)), // Sunday
+        let sugarBowlHours: [[( Date, Date)]] = [
+            [( createDate(hour: 7, minute: 0), createDate(hour: 14, minute: 30))], // Monday
+            [( createDate(hour: 7, minute: 0), createDate(hour: 14, minute: 30))], // Tuesday
+           [( createDate(hour: 7, minute: 0), createDate(hour: 14, minute: 30))], // Wednesday
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 14, minute: 30))], // Thursday
+            [( createDate(hour: 8, minute: 0), createDate(hour: 15, minute: 0))], // Friday
+            [( createDate(hour: 8, minute: 0),  createDate(hour: 15, minute: 0))], // Saturday
+            [( createDate(hour: 7, minute: 0),  createDate(hour: 14, minute: 30))], // Sunday
         ]
         
-        let riverKitchenHours: [(openingTime: Date, closingTime: Date)] = [
+        let riverKitchenHours: [[( Date, Date)]] = [
             // Monday to Friday are closed for River Kitchen
-            (openingTime: createDate(hour: 0, minute: 0), closingTime: createDate(hour: 0, minute: 0)), // Monday
-            (openingTime: createDate(hour: 0, minute: 0), closingTime: createDate(hour: 0, minute: 0)), // Tuesday
-            (openingTime: createDate(hour: 0, minute: 0), closingTime: createDate(hour: 0, minute: 0)), // Wednesday
-            (openingTime: createDate(hour: 0, minute: 0), closingTime: createDate(hour: 0, minute: 0)), // Thursday
-            (openingTime: createDate(hour: 0, minute: 0), closingTime: createDate(hour: 0, minute: 0)), // Friday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Saturday
-            (openingTime: createDate(hour: 9, minute: 0), closingTime: createDate(hour: 14, minute: 0)), // Sunday
+            [(createDate(hour: 0, minute: 0),  createDate(hour: 0, minute: 0))], // Monday
+            [( createDate(hour: 0, minute: 0),  createDate(hour: 0, minute: 0))], // Tuesday
+            [( createDate(hour: 0, minute: 0),  createDate(hour: 0, minute: 0))], // Wednesday
+            [( createDate(hour: 0, minute: 0),  createDate(hour: 0, minute: 0))], // Thursday
+            [( createDate(hour: 0, minute: 0),  createDate(hour: 0, minute: 0))], // Friday
+            [( createDate(hour: 9, minute: 0),  createDate(hour: 14, minute: 0))], // Saturday
+            [( createDate(hour: 9, minute: 0),  createDate(hour: 14, minute: 0))], // Sunday
         ]
         
       guard let kirkImage = UIImage(named: "cafekirk1"),
@@ -170,24 +190,31 @@ class CafeManager {
 
         // Create cafe instances with the defined opening and closing times
         cafes = [
-            Cafe(id: "0", name: "The Kirk Cafe", address: "6 Te Aroha Street, Hamilton East, Hamilton 3216", rating: 4, coordinate: LocationCoordinate(latitude: -37.7835991, longitude: 175.28886647), openingTime: kirkHours[0].openingTime, closingTime: kirkHours[0].closingTime, description: "Wonderful place", images: [kirkImage,kirkImage2,kirkImage3,kirkImage4]),
-            Cafe(id: "1", name: "Cafe Fresca", address: "78 Alison Street, Hamilton Lake, Hamilton 3210", rating: 4, coordinate: LocationCoordinate(latitude: -37.8067891, longitude: 175.2708707), openingTime: frescaHours[0].openingTime, closingTime: frescaHours[0].closingTime, description: "Example 5", images: [frescaImage2, frescaImage, frescaImage3,frescaImage4]),
-            Cafe(id: "2", name: "Hamilton Gardens Cafe", address: "Hamilton Gardens, Hamilton East, Hamilton 3216", rating: 3, coordinate: LocationCoordinate(latitude: -37.7961, longitude: 175.3088), openingTime: gardensHours[0].openingTime, closingTime: gardensHours[0].closingTime, description: "Description", images:[ gardenImage,gardenImage2, gardenImage3, gardenImage4]),
-            Cafe(id: "3", name: "Markyle's Coffee and Food Establishment", address: "38B Hood Street, Hamilton Central, Hamilton 3204", rating: 4, coordinate: LocationCoordinate(latitude: -37.7906427, longitude: 175.2848956), openingTime: markylesHours[0].openingTime, closingTime: markylesHours[0].closingTime, description: "Menu", images: [markyleImage, markyleImage2, markyleImage3,markyleImage4]),
-            Cafe(id: "4", name: "Lola Breakfast Bar & Cafe", address: "2 Whatawhata Road, Dinsdale, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.7946979, longitude: 175.2471037), openingTime: lolaHours[0].openingTime, closingTime: lolaHours[0].closingTime, description: "Polar", images: [lolaImage, lolaImage2]),
-            Cafe(id: "5", name: "The Sugar Bowl Cafe", address: "150 Maeroa Road, Maeroa, Hamilton 3200", rating: 4, coordinate: LocationCoordinate(latitude: -37.776354, longitude: 175.2586546), openingTime: sugarBowlHours[0].openingTime, closingTime: sugarBowlHours[0].closingTime, description: "Example 56", images: [sugarBowlImage, sugarBowlImage2, sugarBowlImage3, sugarBowlImage4]),
-            Cafe(id: "6", name: "The River Kitchen", address: "217 Victoria Street, Hamilton Central, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.788618, longitude: 175.2840732), openingTime: riverKitchenHours[0].openingTime, closingTime: riverKitchenHours[0].closingTime, description: "Example 4", images: [riverKitchenImage2, riverKitchenImage3, riverKitchenImage, riverKitchenImage4]),
+            Cafe(id: "0", name: "The Kirk Cafe", address: "6 Te Aroha Street, Hamilton East, Hamilton 3216", rating: 4, coordinate: LocationCoordinate(latitude: -37.7835991, longitude: 175.28886647), openingHours: kirkHours.flatMap {$0},  description: "Wonderful place", images: [kirkImage,kirkImage2,kirkImage3,kirkImage4]),
+            Cafe(id: "1", name: "Cafe Fresca", address: "78 Alison Street, Hamilton Lake, Hamilton 3210", rating: 4, coordinate: LocationCoordinate(latitude: -37.8067891, longitude: 175.2708707), openingHours: frescaHours.flatMap {$0}, description: "Example 5", images: [frescaImage2, frescaImage, frescaImage3,frescaImage4]),
+            Cafe(id: "2", name: "Hamilton Gardens Cafe", address: "Hamilton Gardens, Hamilton East, Hamilton 3216", rating: 3, coordinate: LocationCoordinate(latitude: -37.7961, longitude: 175.3088), openingHours: gardensHours.flatMap {$0}, description: "Description", images:[ gardenImage,gardenImage2, gardenImage3, gardenImage4]),
+            Cafe(id: "3", name: "Markyle's Coffee and Food Establishment", address: "38B Hood Street, Hamilton Central, Hamilton 3204", rating: 4, coordinate: LocationCoordinate(latitude: -37.7906427, longitude: 175.2848956), openingHours: markylesHours.flatMap {$0}, description: "Menu", images: [markyleImage, markyleImage2, markyleImage3,markyleImage4]),
+            Cafe(id: "4", name: "Lola Breakfast Bar & Cafe", address: "2 Whatawhata Road, Dinsdale, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.7946979, longitude: 175.2471037), openingHours: lolaHours.flatMap {$0}, description: "Polar", images: [lolaImage, lolaImage2]),
+            Cafe(id: "5", name: "The Sugar Bowl Cafe", address: "150 Maeroa Road, Maeroa, Hamilton 3200", rating: 4, coordinate: LocationCoordinate(latitude: -37.776354, longitude: 175.2586546), openingHours: sugarBowlHours.flatMap {$0}, description: "Example 56", images: [sugarBowlImage, sugarBowlImage2, sugarBowlImage3, sugarBowlImage4]),
+            Cafe(id: "6", name: "The River Kitchen", address: "217 Victoria Street, Hamilton Central, Hamilton 3204", rating: 5, coordinate: LocationCoordinate(latitude: -37.788618, longitude: 175.2840732), openingHours: riverKitchenHours.flatMap {$0}, description: "Example 4", images: [riverKitchenImage2, riverKitchenImage3, riverKitchenImage, riverKitchenImage4]),
         ]
     }
 
     // Helper function to create a Date object with the specified hour and minute
     func createDate(hour: Int, minute: Int) -> Date {
-        var dateComponents = DateComponents()
-        dateComponents.hour = hour
-        dateComponents.minute = minute
+        let now = Date() // Get the current date and time
+          let calendar = Calendar.current
+          var components = calendar.dateComponents([.year, .month, .day], from: now)
+          components.hour = hour
+          components.minute = minute
+      
+        // Set the time zone to Melbourne's time zone (Australian Eastern Standard Time)
+        let timeZone = TimeZone(identifier: "Pacific/Auckland")!
+        components.timeZone = timeZone
         // Assuming today's date for simplicity, you may set other date components as needed
-        return Calendar.current.date(from: dateComponents)!
+        return Calendar.current.date(from: components)!
     }
+
 
         
         func getCafes() -> [Cafe] {

@@ -121,12 +121,12 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
                     mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
                     mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                    mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+                    mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 30)
                 ])
                 
                 
-                mapView.currentLocationButtonVisibilityPolicy = .visible
-                mapView.compassButtonVisibilityPolicy = .hidden
+            
+           
                 mapView.isLogoVisible = false
                 
                 

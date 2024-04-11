@@ -123,9 +123,9 @@ class MelCafeViewController: UIViewController {
         nameLabel.textAlignment = .left
         
         // Rating Label //
-        let ratingStar = starRatingString(rating: Double(cafe.rating))
+        _ = starRatingString(rating: Double(cafe.rating))
         let ratingCustomColor = UIColor(red: 49.0/255.0, green: 95.0/255.0, blue: 114.0/255.0, alpha: 1.0)
-        let ratingTextCustomColor = UIColor(red: 33.0/255.0, green: 31.0/255.0, blue: 30.0/255.0, alpha: 1.0)
+        _ = UIColor(red: 33.0/255.0, green: 31.0/255.0, blue: 30.0/255.0, alpha: 1.0)
         
         let ratingStarString = starRatingString(rating: Double(cafe.rating)) // Generate the star rating string
         let ratingStarAttributedString = NSAttributedString(string: ratingStarString, attributes: [.foregroundColor: ratingCustomColor]) // Create an attributed string with the rating stars and the specified color
@@ -206,19 +206,19 @@ class MelCafeViewController: UIViewController {
             if let previous = previousImageView {
                 // If there's a previous image view, constrain the top of the current image view to the bottom of the previous one
                 NSLayoutConstraint.activate([
-                    imageView.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 20),
+                    imageView.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10),
                 ])
             } else {
                 // If there's no previous image view, this is the first one, so constrain its top to the top of the scrollView
                 NSLayoutConstraint.activate([
-                    imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                    imageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
                 ])
             }
             
             // Set the bottom constraint of the scrollView to the bottom of the last image view
             if image == cafe.images.last {
                 NSLayoutConstraint.activate([
-                    scrollView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 100),
+                    scrollView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 80),
                 ])
             }
             
