@@ -5,6 +5,13 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-Bold.ttf</string>
+		<string>Inter-Black.ttf</string>
+		<string>Inter-Medium.ttf</string>
+		<string>Inter-Regular.ttf</string>
+		<string>Inter-Semibold.ttf</string>
+		<string>Sling.ttf</string>
+		<string>SlingLight.ttf</string>
+		<string>SlingBold.ttf</string>
 	</array>
 </dict>
 </plist>

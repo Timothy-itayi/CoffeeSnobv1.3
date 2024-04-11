@@ -93,7 +93,6 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
         mapView?.delegate = self
         mapView?.isUserInteractionEnabled = true
         map?.setExclusiveGestures(gesture: .tap, blockedGestures: [.pan, .pinch, .rotate, .tilt, .longPress])
-        
         mapView?.isLogoVisible = false
         
         
