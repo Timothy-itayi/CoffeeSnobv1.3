@@ -32,7 +32,7 @@ class MelbourneMapViewController: UIViewController, MapViewDelegate, CLLocationM
         print("TomTomMap: The map is ready for interaction.")
    
         self.map = map
-        
+      
         
         // Call the onMapReadyCallback closure if it's set
                if let callback = onMapReadyCallback {
@@ -124,16 +124,17 @@ class MelbourneMapViewController: UIViewController, MapViewDelegate, CLLocationM
                 
                 mapView.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: -10),
+                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
                     mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                    mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+                    mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 30)
                 ])
                 
                
-                mapView.currentLocationButtonVisibilityPolicy = .visible
+           
                 mapView.compassButtonVisibilityPolicy = .hidden
                 mapView.isLogoVisible = false
+           
             }
         }
         
