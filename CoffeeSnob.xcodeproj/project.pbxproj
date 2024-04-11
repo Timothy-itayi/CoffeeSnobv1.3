@@ -11,6 +11,13 @@
 		9814ED132BBBA51E0030524B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9814ED122BBBA51E0030524B /* ContentView.swift */; };
 		9814ED172BBBA51F0030524B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9814ED162BBBA51F0030524B /* Assets.xcassets */; };
 		9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9814ED192BBBA51F0030524B /* Preview Assets.xcassets */; };
+		984D660F2BC747B300BBFF6F /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D66072BC747B300BBFF6F /* Inter-Black.ttf */; };
+		984D66102BC747B300BBFF6F /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D66082BC747B300BBFF6F /* Inter-Medium.ttf */; };
+		984D66112BC747B300BBFF6F /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D66092BC747B300BBFF6F /* Inter-Regular.ttf */; };
+		984D66122BC747B300BBFF6F /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D660A2BC747B300BBFF6F /* Inter-SemiBold.ttf */; };
+		984D66142BC747B300BBFF6F /* SlingBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D660C2BC747B300BBFF6F /* SlingBold.ttf */; };
+		984D66152BC747B300BBFF6F /* SlingLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D660D2BC747B300BBFF6F /* SlingLight.ttf */; };
+		984D66192BC74D0800BBFF6F /* Sling.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 984D66182BC74D0800BBFF6F /* Sling.ttf */; };
 		98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE72BBD1AF600872DA4 /* coffeemarker.png */; };
 		98723EEA2BBD245600872DA4 /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EE92BBD245600872DA4 /* cafe.png */; };
 		98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 98723EED2BBE0B0100872DA4 /* markerBalloon.png */; };
@@ -113,6 +120,14 @@
 		9814ED192BBBA51F0030524B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9814ED1F2BBBA51F0030524B /* CoffeeSnobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeSnobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9814ED292BBBA51F0030524B /* CoffeeSnobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeSnobUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		984D66072BC747B300BBFF6F /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		984D66082BC747B300BBFF6F /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		984D66092BC747B300BBFF6F /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		984D660A2BC747B300BBFF6F /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		984D660C2BC747B300BBFF6F /* SlingBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SlingBold.ttf; sourceTree = "<group>"; };
+		984D660D2BC747B300BBFF6F /* SlingLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SlingLight.ttf; sourceTree = "<group>"; };
+		984D66182BC74D0800BBFF6F /* Sling.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Sling.ttf; path = "../../Tim's/Coffee-Snob/coffee-snob-app/assets/fonts/Sling.ttf"; sourceTree = "<group>"; };
+		984D661A2BC74ECB00BBFF6F /* SlingBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SlingBold.ttf; sourceTree = "<group>"; };
 		98723EE62BBCE52800872DA4 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		98723EE72BBD1AF600872DA4 /* coffeemarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coffeemarker.png; path = ../../../Downloads/coffeemarker.png; sourceTree = "<group>"; };
 		98723EE92BBD245600872DA4 /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe.png; path = ../../../Downloads/cafe.png; sourceTree = "<group>"; };
@@ -242,7 +257,10 @@
 				98D3932D2BBBDB290086F69E /* AppDelegate.swift */,
 				9814ED122BBBA51E0030524B /* ContentView.swift */,
 				9814ED162BBBA51F0030524B /* Assets.xcassets */,
+				984D660E2BC747B300BBFF6F /* fonts */,
 				98723F1B2BC3CAF500872DA4 /* Inter-Bold.ttf */,
+				984D66182BC74D0800BBFF6F /* Sling.ttf */,
+				984D661A2BC74ECB00BBFF6F /* SlingBold.ttf */,
 				98723EED2BBE0B0100872DA4 /* markerBalloon.png */,
 				98723EE92BBD245600872DA4 /* cafe.png */,
 				98723EE72BBD1AF600872DA4 /* coffeemarker.png */,
@@ -272,6 +290,20 @@
 			children = (
 			);
 			path = "Cafe-ProjectUITests";
+			sourceTree = "<group>";
+		};
+		984D660E2BC747B300BBFF6F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				984D66072BC747B300BBFF6F /* Inter-Black.ttf */,
+				984D66082BC747B300BBFF6F /* Inter-Medium.ttf */,
+				984D66092BC747B300BBFF6F /* Inter-Regular.ttf */,
+				984D660A2BC747B300BBFF6F /* Inter-SemiBold.ttf */,
+				984D660C2BC747B300BBFF6F /* SlingBold.ttf */,
+				984D660D2BC747B300BBFF6F /* SlingLight.ttf */,
+			);
+			name = fonts;
+			path = ../../fonts;
 			sourceTree = "<group>";
 		};
 		98723F032BC0D28900872DA4 /* Models */ = {
@@ -601,10 +633,13 @@
 				98723F222BC3D43100872DA4 /* Inter-Bold.ttf in Resources */,
 				9814ED1A2BBBA51F0030524B /* Preview Assets.xcassets in Resources */,
 				98723EEE2BBE0B0200872DA4 /* markerBalloon.png in Resources */,
+				984D66122BC747B300BBFF6F /* Inter-SemiBold.ttf in Resources */,
 				9814ED172BBBA51F0030524B /* Assets.xcassets in Resources */,
 				98723F522BC4C40B00872DA4 /* sugar1.jpeg in Resources */,
 				98723EEA2BBD245600872DA4 /* cafe.png in Resources */,
+				984D660F2BC747B300BBFF6F /* Inter-Black.ttf in Resources */,
 				98723F512BC4C40B00872DA4 /* riverkitchen2.jpeg in Resources */,
+				984D66142BC747B300BBFF6F /* SlingBold.ttf in Resources */,
 				98723EE82BBD1AF600872DA4 /* coffeemarker.png in Resources */,
 				98723F4C2BC4C40B00872DA4 /* lola1.jpeg in Resources */,
 				98723F4D2BC4C40B00872DA4 /* lola2.jpeg in Resources */,
@@ -614,8 +649,12 @@
 				98723F452BC4C40B00872DA4 /* cinnamon2.jpeg in Resources */,
 				98723F4A2BC4C40B00872DA4 /* cafekirk1.jpeg in Resources */,
 				98723F482BC4C40B00872DA4 /* gardens1.jpeg in Resources */,
+				984D66192BC74D0800BBFF6F /* Sling.ttf in Resources */,
 				98723F462BC4C40B00872DA4 /* cafefresca1.jpeg in Resources */,
+				984D66152BC747B300BBFF6F /* SlingLight.ttf in Resources */,
 				98723F4E2BC4C40B00872DA4 /* markyle1.jpeg in Resources */,
+				984D66102BC747B300BBFF6F /* Inter-Medium.ttf in Resources */,
+				984D66112BC747B300BBFF6F /* Inter-Regular.ttf in Resources */,
 				98723F4B2BC4C40B00872DA4 /* cafekirk2.jpeg in Resources */,
 				98723F492BC4C40B00872DA4 /* gardens2.jpeg in Resources */,
 				98723F502BC4C40B00872DA4 /* riverkitchen1.jpeg in Resources */,

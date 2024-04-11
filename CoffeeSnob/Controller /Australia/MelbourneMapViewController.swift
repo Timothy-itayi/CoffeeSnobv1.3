@@ -124,7 +124,7 @@ class MelbourneMapViewController: UIViewController, MapViewDelegate, CLLocationM
                 
                 mapView.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
-                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
+                    mapView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: -10),
                     mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
                     mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)

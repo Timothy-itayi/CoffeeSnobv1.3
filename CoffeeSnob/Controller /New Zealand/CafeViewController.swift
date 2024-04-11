@@ -86,7 +86,7 @@ class CafeViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 10),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 600),
+            scrollView.heightAnchor.constraint(equalToConstant: 1000),
 
     
       
@@ -112,7 +112,7 @@ class CafeViewController: UIViewController {
                         NSLayoutConstraint.activate([
                             imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
                             imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-                            imageView.heightAnchor.constraint(equalToConstant: 400)
+                            imageView.heightAnchor.constraint(equalToConstant: 600)
                         ])
                         
                         if let previous = previousImageView {
@@ -130,7 +130,7 @@ class CafeViewController: UIViewController {
                         previousImageView = imageView
                     }
 
-                    scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: CGFloat(cafe.images.count) * 400)
+                    scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: CGFloat(cafe.images.count) * 600)
         
         
 
