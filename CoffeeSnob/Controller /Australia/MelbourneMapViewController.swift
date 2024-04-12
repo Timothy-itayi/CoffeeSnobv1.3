@@ -40,7 +40,7 @@ class MelbourneMapViewController: UIViewController, MapViewDelegate, CLLocationM
                }
         
         addMarkers()
-      // Check if the
+        showMapAlertIfNeeded()
     
         
         // Add tap gesture recognizer directly to the mapView
@@ -161,7 +161,41 @@ class MelbourneMapViewController: UIViewController, MapViewDelegate, CLLocationM
             }
         }
     }
-    
+    private func showMapAlert() {
+        let alert = UIAlertController(title: "  ", message: "Tap on markers to view cafe cards", preferredStyle: .alert)
+        
+        // Define custom font attributes
+        let titleFont = UIFont(name: "YourCustomFont-Bold", size: 20.0) ?? UIFont.boldSystemFont(ofSize: 20.0)
+        let messageFont = UIFont(name: "YourCustomFont-Regular", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0)
+        
+        // Create attributed strings with custom font attributes
+        let titleAttributedString = NSAttributedString(string: "\nExplore Melbourne\n", attributes: [.font: titleFont])
+        let messageAttributedString = NSAttributedString(string: "Tap on markers to view cafe cards", attributes: [.font: messageFont])
+        
+        // Set attributed title and message
+        alert.setValue(titleAttributedString, forKey: "attributedTitle")
+        alert.setValue(messageAttributedString, forKey: "attributedMessage")
+        
+        // Add action
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // Present alert
+        present(alert, animated: true, completion: nil)
+    }
+
+
+    private func showMapAlertIfNeeded() {
+           guard let map = self.mapView?.map, melbournecafeManager.getMelCafes().count > 0 else {
+               // Map or markers are not ready yet, wait for them to be initialized
+               DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+                   self.showMapAlertIfNeeded()
+               }
+               return
+           }
+           
+           // Map and markers are initialized, show the alert
+           showMapAlert()
+       }
     
     
     

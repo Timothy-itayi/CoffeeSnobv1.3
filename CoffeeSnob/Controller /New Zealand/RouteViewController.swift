@@ -32,15 +32,16 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
         self.map = map
         print("Calling addMarkers function...")
         addMarkers(map: map)
-
+        showMapAlertIfNeeded()
         // Check if the
         let isCurrentLocationButtonVisible = mapView.isCurrentLocationButtonVisible
         print("Is current location button visible? \(isCurrentLocationButtonVisible)")
-        
+     
         
         // Add tap gesture recognizer directly to the mapView
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(_:)))
         mapView.addGestureRecognizer(tapGestureRecognizer)
+        
     }
     @objc func handleMapTap(_ gestureRecognizer: UITapGestureRecognizer) {
         guard gestureRecognizer.state == .ended else {
@@ -121,12 +122,12 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
                     mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
                     mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                    mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 30)
+                    mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 100)
                 ])
                 
                 
             
-           
+                mapView.compassButtonVisibilityPolicy = .hidden
                 mapView.isLogoVisible = false
                 
                 
@@ -172,7 +173,41 @@ class RouteViewController: UIViewController, MapViewDelegate, CLLocationManagerD
             }
         }
     }
+    private func showMapAlert() {
+        let alert = UIAlertController(title: "  ", message: "Tap on markers to view cafe cards", preferredStyle: .alert)
+        
+        // Define custom font attributes
+        let titleFont = UIFont(name: "YourCustomFont-Bold", size: 20.0) ?? UIFont.boldSystemFont(ofSize: 20.0)
+        let messageFont = UIFont(name: "YourCustomFont-Regular", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0)
+        
+        // Create attributed strings with custom font attributes
+        let titleAttributedString = NSAttributedString(string: "\nExplore Hamilton\n", attributes: [.font: titleFont])
+        let messageAttributedString = NSAttributedString(string: "Tap on markers to view cafe cards", attributes: [.font: messageFont])
+        
+        // Set attributed title and message
+        alert.setValue(titleAttributedString, forKey: "attributedTitle")
+        alert.setValue(messageAttributedString, forKey: "attributedMessage")
+        
+        // Add action
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // Present alert
+        present(alert, animated: true, completion: nil)
+    }
 
+
+    private func showMapAlertIfNeeded() {
+           guard let map = self.mapView?.map, cafeManager.getCafes().count > 0 else {
+               // Map or markers are not ready yet, wait for them to be initialized
+               DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+                   self.showMapAlertIfNeeded()
+               }
+               return
+           }
+           
+           // Map and markers are initialized, show the alert
+           showMapAlert()
+       }
 }
     
 
