@@ -19,6 +19,7 @@ let customColor = Color(red: 75.0/255.0, green: 50.0/255.0, blue: 30.0/255.0)
             
             
             Text("Select a city")
+            
                 .font(.custom("Sling-Bold", size: 36))
                 .scaleEffect(isContentVisible ? 1 : 0.5) // Animate the scale
 

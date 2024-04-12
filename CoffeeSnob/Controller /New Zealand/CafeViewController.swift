@@ -95,7 +95,7 @@ class CafeViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 30),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 590),
+            scrollView.heightAnchor.constraint(equalToConstant: 600),
             
             
             
@@ -109,52 +109,25 @@ class CafeViewController: UIViewController {
         
         // Name label //
         nameLabel.text = cafe.name
-        
+        nameLabel.numberOfLines = 0 // Allow multiple lines for the label
+        nameLabel.lineBreakMode = .byWordWrapping // Wrap the text to new line when needed
+
         let nameLabelFont = UIFont(name: "Sling-Bold", size: 30)
-        
-        if let nameLabelFont = nameLabelFont{
+        if let nameLabelFont = nameLabelFont {
             nameLabel.font = nameLabelFont
         }
         nameLabel.textAlignment = .left
+
         
         // Rating Label //
-        _ = starRatingString(rating: Double(cafe.rating))
+        let fullStar = "\u{2605}" // Unicode for full star
+        let emptyStar = "\u{2606}" // Unicode for empty star
+
+        let ratingStarString = String(repeating: fullStar, count: Int(cafe.rating)) + String(repeating: emptyStar, count: 5 - Int(cafe.rating))
         let ratingCustomColor = UIColor(red: 49.0/255.0, green: 95.0/255.0, blue: 114.0/255.0, alpha: 1.0)
-        _ = UIColor(red: 33.0/255.0, green: 31.0/255.0, blue: 30.0/255.0, alpha: 1.0)
-        
-        let ratingStarString = starRatingString(rating: Double(cafe.rating)) // Generate the star rating string
         let ratingStarAttributedString = NSAttributedString(string: ratingStarString, attributes: [.foregroundColor: ratingCustomColor]) // Create an attributed string with the rating stars and the specified color
         ratingLabel.attributedText = ratingStarAttributedString // Set the attributed text to the label
-        
-        func starRatingString(rating: Double) -> String {
-            let fullStar = "\u{2605}"
-            let halfStar = "\u{00BD}" // Unicode for half star
-            let emptyStar = "\u{2606}"
-            
-            var ratingString = ""
-            
-            // Calculate the number of full stars
-            let fullStars = Int(rating)
-            
-            // Append full stars
-            for _ in 0..<fullStars {
-                ratingString.append(fullStar)
-            }
-            
-            // Check if there's a half star
-            let decimalPart = rating - Double(fullStars)
-            if decimalPart >= 0.25 {
-                ratingString.append(halfStar)
-            }
-            
-            // Append empty stars to fill up to 5 stars
-            let remainingStars = 5 - fullStars - (ratingString.count - fullStars)
-            for _ in 0..<remainingStars {
-                ratingString.append(emptyStar)
-            }
-            
-            return ratingString
-        }
+
         
         // Description Label //
         descriptionLabel.text = cafe.description
@@ -213,7 +186,7 @@ class CafeViewController: UIViewController {
             // Set the bottom constraint of the scrollView to the bottom of the last image view
             if image == cafe.images.last {
                 NSLayoutConstraint.activate([
-                    scrollView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+                    scrollView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 100),
                 ])
             }
             

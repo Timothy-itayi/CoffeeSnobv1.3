@@ -37,13 +37,13 @@ class CafeManager {
         let id: String
         let name: String
         let address: String
-        let rating: Double
+        let rating: Int
         let coordinate: LocationCoordinate
         let openingHours: [(Date, Date)]
         let description: String
         let images:[UIImage]
         
-        init(id: String, name: String, address: String, rating: Double, coordinate: LocationCoordinate, openingHours: [(Date, Date)], description: String, images: [UIImage]) {
+        init(id: String, name: String, address: String, rating: Int, coordinate: LocationCoordinate, openingHours: [(Date, Date)], description: String, images: [UIImage]) {
             self.id = id
             self.name = name
             self.address = address
