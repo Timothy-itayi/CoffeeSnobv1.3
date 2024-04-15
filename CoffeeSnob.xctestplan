@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "A44C0C44-B06D-4ED2-933D-AEDBE0BCBFA5",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:CoffeeSnob.xcodeproj",
+          "identifier" : "9814ED0C2BBBA51E0030524B",
+          "name" : "CoffeeSnob"
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CoffeeSnob.xcodeproj",
+      "identifier" : "9814ED0C2BBBA51E0030524B",
+      "name" : "CoffeeSnob"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CoffeeSnob.xcodeproj",
+        "identifier" : "984D66982BCCFA3100BBFF6F",
+        "name" : "CoffeeSnobTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CoffeeSnob.xcodeproj",
+        "identifier" : "984D66892BCCFA1F00BBFF6F",
+        "name" : "CoffeeSnobUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
