@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isContentVisible = false
+    @State public var isContentVisible = false
     let customColor = Color(red: 75.0/255.0, green: 50.0/255.0, blue: 30.0/255.0)
 
     var body: some View {
