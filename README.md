@@ -11,13 +11,13 @@ CoffeeSnob is a mobile app that helps you discover and explore the best cafes in
 -- ** Select a city ** ---
 ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 53](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/629de89d-9c4f-4760-afc3-79c0deab203d)
 
---** Select marker on map to veiw cafe card ---
+
  ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae)  
 
 
 
 
--- cafe card --
+
 ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 07](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/537a9b4b-1d30-45c7-8a6f-6bc343740af1)
 
 ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
