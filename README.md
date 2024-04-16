@@ -10,13 +10,13 @@ CoffeeSnob is a mobile app that helps you discover and explore the best cafes in
 ## Screenshots
 ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 53](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/629de89d-9c4f-4760-afc3-79c0deab203d)
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae) 
+   ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae) 
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
+   ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 33](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/d8179d60-64a3-4985-a1ca-cefee7399841)
+  ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 33](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/d8179d60-64a3-4985-a1ca-cefee7399841)
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 50 06](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/3f24a61d-c24d-4539-a034-175735d7a610)
+  ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 50 06](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/3f24a61d-c24d-4539-a034-175735d7a610)
 
 
 ## Getting Started
