@@ -21,7 +21,8 @@ To get started with CoffeeSnob, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Open the project in Xcode.
-3. Build and run the app on your iOS device or simulator.
+3. To use the App you need to sign up to TOmTomSDK(IOS) and acquire the apiKey in order to render the map
+4. Build and run the app on your iOS device or simulator.
 
 ## Requirements
 
