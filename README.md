@@ -9,25 +9,25 @@ CoffeeSnob is a mobile app that helps you discover and explore the best cafes in
 
 ## CoffeeSnob WITH NO MAP 
 
---This idea came about because my girlfriend who is a product designer had a prototype that she had created with her friends a few years ago when she was studying graphic design at university. The protoype came with all sorts of features , an Auth, being able to save your favourite cafes, being able to filter coffee based on preference i.e(long black, flat white etc). (See below) 
+--This idea came about because my girlfriend who is a product designer had a prototype that she had created with her friends a few years ago when she was studying graphic design at university. The protoype came with all sorts of features , an Auth, being able to save your favourite cafes, being able to filter coffee based on preference i.e(long black, flat white etc).  
 
 <img width="570" alt="Screenshot 2024-04-18 at 2 58 25 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f3eca8a2-af14-48c5-b879-c990912480c5">
 
 --
--- I realised I wanted to try and create the app in the same fashion but change the design a little bit, mainly in regards to todays standard of design as the initial protoype design I found was outdated.  So I started brain storming how I could manage to incoporate the same the app using react-native with expo. The reason I chose to do this was because that was the only to create a mobile app with ios in mind. 
+-- I realised I wanted to try and create the app in the same fashion but change the design a little bit, mainly in regards to today's standard of design as the initial protoype design I found was outdated.  So I started brain storming how I could manage to incoporate the same design insofar as finding suitable libraries that could invoke the same overall feel of the application  using react-native with expo. The reason I chose to do this was because that was the only to create a mobile app with ios in mind. 
 
-After a few days of configuring my environment to suit react-native and expos demands and about a week I ended up with this design. I just hard coded everything to get an idea of how it was going to look with cafes in the feed/Home page. 
+After a few days of configuring my environment to suit react-native and expos demands and about a week after that  I ended up with this design. I just hard coded everything to get an idea of how it was going to look with cafes in the feed/Home page. 
 
 
 
 
 ![IMG_5984](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/8f773ab7-0f53-4c12-b71e-c80ae740bf9b)
 
---After a while though things got very difficult very quickly because as I was working I realised that I could not keep adding more features such as creating an auth for users or a database or anything as it became apparent to me that this project would take weeks maybe months to come together since i was the only developer working on it I had to scale it back tremendously and focus on the features that popped out the most and make the the focal point of the application. 
+--After a while though things got very difficult very quickly because as I was working I realised that I could not keep adding more features such as creating an auth for users or a database or anything more for that matter as it became apparent to me that this project would take weeks maybe months to come together since I was the only developer working on it. I had to scale it back tremendously and focus on the features that popped out the most and make that the focal point of the application. 
 
---After 2 weeks I went back to the drawing board and created a new project called CoffeeSnobv1.3 and decided to code in swift, I have never written in swift before so this was a whole new ball game. In saying that I tried to use googlesMapsSDK and authSDK as well as  incoporating a database with firebase but that was imcompatible with what I wanted to achieve , mainly due to a feature of firebase being deprecated and also having to pay for and hopefully to acquire a apple developers program certificate(which i still have not recieved).
+--After 2 weeks I went back to the drawing board and created a new project called CoffeeSnobv1.3 and decided to code in swift, I had never written in swift before so this was a whole new ball game. In saying that I tried to use googlesMapsSDK and thier authSDK (firebase) but that was imcompatible with what I wanted to achieve , mainly due to a feature of firebase being deprecated and also having to pay for and hopefully to acquire a apple developers program certificate(which i still have not recieved).
 
---In short I scaled back even further and decided to scrap google and find a third party service to provide the features I needed which led me to TomTom. These guys had a great package but again more hurdles insofar as to understand how the methods work with one another and having a prerequisite knowledge of swift to begin with made this very difficult. But I managed to push through.
+--In short I scaled back even further and decided to scrap google all together and find a third party service to provide the features I needed which led me to TomTom. These guys had a great package but again more hurdles insofar as to understand how the methods work with one another and having  prerequisite knowledge of swift to begin with made this very difficult. But I managed to push through.
 
 
 
