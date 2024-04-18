@@ -113,7 +113,7 @@ class MelbourneMapViewController: UIViewController, MapViewDelegate, CLLocationM
         let styleContainer = StyleContainer.defaultStyle
         let cameraUpdate = CameraUpdate(position: CLLocationCoordinate2D(latitude: -37.8142454, longitude: 144.9631), zoom: 12.6, tilt: 45, rotation: 0)
         let resourceCachePolicy = OnDiskCachePolicy.cache(duration: Measurement.tt.hours(10), maxSize: Measurement.tt.megabytes(200))
-        let mapOptions = MapOptions(mapStyle: styleContainer, apiKey: "pI4kmVlG64hsmsxz9fLKoMtXOmLVgaJW", cameraUpdate: cameraUpdate, cachePolicy: resourceCachePolicy)
+        let mapOptions = MapOptions(mapStyle: styleContainer, apiKey: "", cameraUpdate: cameraUpdate, cachePolicy: resourceCachePolicy)
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
