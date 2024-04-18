@@ -46,6 +46,6 @@ CoffeeSnob is licensed under the MIT License. See the [LICENSE](./LICENSE) file 
 This README provides a brief overview of CoffeeSnob, its features, how to get started with the project, requirements, dependencies, contribution guidelines, and licensing information. You can customize it further to include more specific details about your project.
 
 # COFFEESNOB
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <https://youtu.be/i3jE4w2PQig>
 #### Description:
-TODOC onsume TomTomOnlineMaps to filter by Cafe in Hamilton , Display map and Interactive Markers when tapped to display cafe Cards
+TODO:  Consume TomTomOnlineMaps to filter by Cafe in Hamilton , Display map and Interactive Markers when tapped to display cafe Cards
