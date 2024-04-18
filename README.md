@@ -12,7 +12,7 @@ CoffeeSnob is a mobile app that helps you discover and explore the best cafes in
 
 --This idea came about because my girlfriend who is a product designer had a prototype that she had created with her friends a few years ago when she was studying graphic design at university. The protoype came with all sorts of features , an Auth, being able to save your favourite cafes, being able to filter coffee based on preference i.e(long black, flat white etc), being able to route the user to the destination of the cafe and lead them there as well as notify the user if there were other cafes in the area along the way.
 
---It's important to note that when my girlfriend had informed me of the initial idea I warned her that I would need to scale back the application, as this was a very ambitous endevour and I needed to focus on features that would showcase my skill set.
+--It's important to note that when my girlfriend had informed me of the initial idea I warned her that I would need to scale back the application, as this was a very ambitious endevour and I needed to focus on features that I could hone in on and showcase my skill set or what I was interested in which was the front end portion of the application.
 
 <img width="534" alt="Screenshot 2024-04-18 at 3 51 38 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/2d09a77f-5899-448f-92c8-017fbd75c1ae">
 
