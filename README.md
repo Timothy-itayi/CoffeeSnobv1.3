@@ -56,6 +56,7 @@ When I created the first iteration of the app I had to create  cafe data and sto
 --As you can imagine there was a lot to do with very little time but I managed to push forward with the project. 
 --I did however want to write test for the project to see if the functions were working as expected plus it is nice to write tests, though that never materialised due to xcode having build errors. I tried to solve those errors but It became clear that I would end up having to break the app further in order to try and fix it. 
 
+-- So let me give you a run down of the files I chose to make in my project 
 
 --Anyway I hope you had fun reading my journey as much I did experiencing it.
 
