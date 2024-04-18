@@ -19,8 +19,9 @@ CoffeeSnob is a mobile app that helps you discover and explore the best cafes in
 After a few days of configuring my environment to suit react-native and expos demands and about a week I ended up with this design. I just hard coded everything to get an idea of how it was going to look with cafes in the feed/Home page. 
 
 
-![IMG_5984](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/3e1d884c-b549-494c-bf9c-53f7abc8534d)
 
+
+![IMG_5984](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/8f773ab7-0f53-4c12-b71e-c80ae740bf9b)
 
 --After a while though things got very difficult very quickly because as I was working I realised that I could not keep adding more features such as creating an auth for users or a database or anything as it became apparent to me that this project would take weeks maybe months to come together since i was the only developer working on it I had to scale it back tremendously and focus on the features that popped out the most and make the the focal point of the application. 
 
