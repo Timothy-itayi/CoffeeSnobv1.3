@@ -20,9 +20,13 @@ CoffeeSnob is a mobile app that helps you discover and explore the best cafes in
 <img width="570" alt="Screenshot 2024-04-18 at 2 58 25 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f3eca8a2-af14-48c5-b879-c990912480c5">
 
 --
--- I realised I wanted to try and create the app in the same fashion but change the design a little bit, mainly in regards to today's standard of design as the initial protoype design I found was outdated.  So I started brain storming how I could manage to incoporate the same design insofar as finding suitable libraries that could invoke the same overall feel of the application  using react-native with expo. The reason I chose to do this was because that was the only to create a mobile app with ios in mind. 
+-- I realised I wanted to try and create the app in the same fashion but change the design a little bit, mainly in regards to today's standard of design as the initial protoype design I found was outdated.  So I started brain storming how I could manage to incoporate the same design insofar as finding suitable libraries that could invoke the same overall feel of the application  using react-native with expo. The reason I chose to do this was because that was the only way to create a mobile app with ios in mind. 
 
-After a few days of configuring my environment to suit react-native and expos demands and about a week after that  I ended up with this design. I just hard coded everything to get an idea of how it was going to look with cafes in the feed/Home page. 
+After a few days of setting up my dependencies to suit react-native and expos demands and about a week after that  I ended up with this design. 
+
+Here is a link to the github for my react-native with expo version written in javascript: (https://github.com/Timothy-itayi/Coffee-Snob)
+
+I just hard coded everything to get an idea of how it was going to look with cafes in the feed/Home page. 
 
 
 
