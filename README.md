@@ -63,7 +63,6 @@ When I created the first iteration of the app I had to create  cafe data and sto
 --I did however want to write test for the project to see if the functions were working as expected plus it is nice to write tests, though that never materialised due to xcode having build errors. I tried to solve those errors but It became clear that I would end up having to break the app further in order to try and fix it. 
 <div stlye="pointer-events: none;">
    <img width="616" alt="Screenshot 2024-04-17 at 5 44 21 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/633a7abd-ecbb-42f4-8847-c02a248616ed">
-
 </div>
 
 -- So let me give you a run down of the files I chose to make in my project.
@@ -84,21 +83,21 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 -- Next I needed to incoporate the interaciton method  made by TomTom in order to make the mapDisplay functional. TomTom uses a method called OnInteraction. This method comes with a delegate you must place on the class of your choice in order for it to link to the map display , Inside of that delegate came the method OnInteraciton which came with an array of switch case functions you could choose from ... so I wrote a function that if a marker is tapped it would trigger a bottom sheet to appear displaying the cafe card. 
 
-<div stlye="pointer-events: none;">
+
    [onInteraction](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Models/New%20Zealand/InteractionManager.swift)
-</div>
+
 
 -- I then had to create a CafeCardController in order to display the cafe details, this CafeCardController would be triggered by the onInteraction delegate functions when a user tapped on the markers on the map 
 
-<div stlye="pointer-events: none;">
+
    [CafeCardController](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Controller%20/New%20Zealand/CafeViewController.swift)
-</div>
+
 
 --After that all I needed to do was customise the cards and the app as a whole and repeat the process for adding other locations. 
 
 
 --Anyway I hope you had fun reading my journey as much I did experiencing it.
-<div stlye="pointer-events: none;">
+<div style="pointer-events: none;">
       ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae) 
       ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
 </div>
