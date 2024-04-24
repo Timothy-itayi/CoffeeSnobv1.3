@@ -81,7 +81,7 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
    ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae) 
 
-   ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
+   ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14]://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
 
 
 ## Getting Started
