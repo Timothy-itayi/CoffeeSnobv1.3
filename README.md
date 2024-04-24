@@ -69,7 +69,7 @@ When I created the first iteration of the app I had to create  cafe data and sto
 --For starters I created a RouteView controller to display the map as well utilise the TomTomsSDK methods such as the onMapDisplay and AddMarkers function.
 
 <div style="pointer-events: none;">
-   [MapDisplay](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Controller%20/New%20Zealand/RouteViewController.swift)
+
 </div>
 
 
@@ -98,8 +98,7 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 --Anyway I hope you had fun reading my journey as much I did experiencing it.
 <div style="pointer-events: none;">
-      ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae) 
-      ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
+
 </div>
 
 
