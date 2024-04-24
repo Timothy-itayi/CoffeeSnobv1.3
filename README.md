@@ -98,6 +98,7 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 --Anyway I hope you had fun reading my journey as much I did experiencing it.
 <div style="pointer-events: none;">
+<img width="381" alt="finalCoffee" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/5ca9c53a-a4a6-4d9d-bdf2-f1d8556add62">
 
 </div>
 
