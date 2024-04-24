@@ -13,11 +13,15 @@ CoffeeSnob is a mobile app that helps you discover and explore the best cafes in
 --This idea came about because my girlfriend who is a product designer had a prototype that she had created with her friends a few years ago when she was studying graphic design at university. The protoype came with all sorts of features , an Auth, being able to save your favourite cafes, being able to filter coffee based on preference i.e(long black, flat white etc), being able to route the user to the destination of the cafe and lead them there as well as notify the user if there were other cafes in the area along the way.
 
 --It's important to note that when my girlfriend had informed me of the initial idea I warned her that I would need to scale back the application. Due to the fact that this was my first time working with a designer and making a mobile application to begin with .I had to let her know that what she had proposed had to be scaled back tremendously. Instead I ended up focusing on the front-end portion of the application focusing on the display and user experience. How would you feel using this application? I started there. 
+<div stlye="pointer-events: none;">
+  <img width="534" alt="Screenshot 2024-04-18 at 3 51 38 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/2d09a77f-5899-448f-92c8-017fbd75c1ae">
+ 
+</div>
 
-<img width="534" alt="Screenshot 2024-04-18 at 3 51 38 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/2d09a77f-5899-448f-92c8-017fbd75c1ae">
-
-
-<img width="570" alt="Screenshot 2024-04-18 at 2 58 25 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f3eca8a2-af14-48c5-b879-c990912480c5">
+<div stlye="pointer-events: none;">
+  <img width="570" alt="Screenshot 2024-04-18 at 2 58 25 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f3eca8a2-af14-48c5-b879-c990912480c5">
+ 
+</div>
 
 --
 -- I realised I wanted to try and create the app in the same fashion but change the design a little bit, mainly in regards to today's standard of design as the initial protoype design I found was outdated to me.  So I started brain storming how I could manage to incoporate the same design insofar as finding suitable libraries that could invoke the same overall feel of the application  using react-native with expo. The reason I chose to do this was because that was the only way to create a mobile app with ios in mind.  
@@ -30,8 +34,10 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 
 
+<div stlye="pointer-events: none;">
+   ![IMG_5984](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/8f773ab7-0f53-4c12-b71e-c80ae740bf9b)
 
-![IMG_5984](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/8f773ab7-0f53-4c12-b71e-c80ae740bf9b)
+</div>
 
 --After a while though things got very difficult very quickly because as I was working I realised that I could not keep adding more features such as creating an auth for users or a database or anything more for that matter as it became apparent to me that this project would take weeks maybe months to come together since I was the only developer working on it. I had to scale it back tremendously and focus on the features that popped out the most and make that the focal point of the application. 
 
@@ -55,12 +61,17 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 --As you can imagine there was a lot to do with very little time but I managed to push forward with the project. 
 --I did however want to write test for the project to see if the functions were working as expected plus it is nice to write tests, though that never materialised due to xcode having build errors. I tried to solve those errors but It became clear that I would end up having to break the app further in order to try and fix it. 
+<div stlye="pointer-events: none;">
+   <img width="616" alt="Screenshot 2024-04-17 at 5 44 21 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/633a7abd-ecbb-42f4-8847-c02a248616ed">
 
-<img width="616" alt="Screenshot 2024-04-17 at 5 44 21 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/633a7abd-ecbb-42f4-8847-c02a248616ed">
+</div>
 
 -- So let me give you a run down of the files I chose to make in my project.
 --For starters I created a RouteView controller to display the map as well utilise the TomTomsSDK methods such as the onMapDisplay and AddMarkers function.
-[MapDisplay](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Controller%20/New%20Zealand/RouteViewController.swift)
+<div stlye="pointer-events: none;">
+   [MapDisplay](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Controller%20/New%20Zealand/RouteViewController.swift)
+
+</div>
 
 
 -- Then once I was able to display the map and the coordinates I went on to create the cafe Data . I knew it would be best to follow the common practice and create a seperate file to hold the data and then import that file when needed into the mapView.
@@ -71,19 +82,29 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 
 -- Next I needed to incoporate the interaciton method  made by TomTom in order to make the mapDisplay functional. TomTom uses a method called OnInteraction. This method comes with a delegate you must place on the class of your choice in order for it to link to the map display , Inside of that delegate came the method OnInteraciton which came with an array of switch case functions you could choose from ... so I wrote a function that if a marker is tapped it would trigger a bottom sheet to appear displaying the cafe card. 
-[onInteraction](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Models/New%20Zealand/InteractionManager.swift)
+<div stlye="pointer-events: none;">
+   [onInteraction](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Models/New%20Zealand/InteractionManager.swift)
+
+</div>
 
 -- I then had to create a CafeCardController in order to display the cafe details, this CafeCardController would be triggered by the onInteraction delegate functions when a user tapped on the markers on the map 
-[CafeCardController](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Controller%20/New%20Zealand/CafeViewController.swift)
+<div stlye="pointer-events: none;">
+   [CafeCardController](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Controller%20/New%20Zealand/CafeViewController.swift)
+
+</div>
 
 --After that all I needed to do was customise the cards and the app as a whole and repeat the process for adding other locations. 
 
 
 --Anyway I hope you had fun reading my journey as much I did experiencing it.
+<div stlye="pointer-events: none;">
+      ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae) 
 
-   ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 39 57](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/f4ad8310-3d7a-435b-9d41-24fb136730ae) 
+</div>
+<div stlye="pointer-events: none;">
+      ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
 
-   ![Simulator Screenshot - iPhone 15 Pro - 2024-04-16 at 16 40 14](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/337d10e0-c313-48ed-8075-87d525703cd2)
+</div>
 
 
 ## Getting Started
