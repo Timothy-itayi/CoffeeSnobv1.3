@@ -64,8 +64,10 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 
 -- Then once I was able to display the map and the coordinates I went on to create the cafe Data . I knew it would be best to follow the common practice and create a seperate file to hold the data and then import that file when needed into the mapView.
+<div style="pointer-events: none;">
+   ![Cafe-Manager](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Models/New%20Zealand/CafeManager.swift)
+</div>
 
-[Cafe-Manager](https://github.com/Timothy-itayi/CoffeeSnobv1.3/blob/main/CoffeeSnob/Models/New%20Zealand/CafeManager.swift)
 
 
 -- Next I needed to incoporate the interaciton method  made by TomTom in order to make the mapDisplay functional. TomTom uses a method called OnInteraction. This method comes with a delegate you must place on the class of your choice in order for it to link to the map display , Inside of that delegate came the method OnInteraciton which came with an array of switch case functions you could choose from ... so I wrote a function that if a marker is tapped it would trigger a bottom sheet to appear displaying the cafe card. 
