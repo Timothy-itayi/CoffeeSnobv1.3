@@ -35,8 +35,9 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 
 <div style="pointer-events: none;">
-   ![IMG_5984](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/8f773ab7-0f53-4c12-b71e-c80ae740bf9b)
+   ![reactNativeCoffee](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/ff26e029-5fbe-4f6d-9dc0-697742441c6c)
 </div>
+
 
 --After a while though things got very difficult very quickly because as I was working I realised that I could not keep adding more features such as creating an auth for users or a database or anything more for that matter as it became apparent to me that this project would take weeks maybe months to come together since I was the only developer working on it. I had to scale it back tremendously and focus on the features that popped out the most and make that the focal point of the application. 
 
