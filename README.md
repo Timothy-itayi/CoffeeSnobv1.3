@@ -35,7 +35,9 @@ When I created the first iteration of the app I had to create  cafe data and sto
 
 
 <div style="pointer-events: none;">
-  <img alt= "reactNativeCoffee"src="![reactNativeCoffee](https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/ff26e029-5fbe-4f6d-9dc0-697742441c6c)">
+<img width="234" alt="Screenshot 2024-04-24 at 2 04 39 PM" src="https://github.com/Timothy-itayi/CoffeeSnobv1.3/assets/119027453/44c8435e-3a3b-4fae-a03c-929a5f9b3ce2">
+
+
 </div>
 
 
